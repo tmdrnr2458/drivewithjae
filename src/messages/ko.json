@@ -1,0 +1,158 @@
+{
+  "meta": {
+    "title": "드라이브 위드 재 | 롤리 정직한 자동차 구매",
+    "description": "재승국과 함께 완벽한 차를 찾으세요. 부담 없는 정직한 서비스. 한국어 상담 가능. Fred Anderson Kia, Raleigh NC."
+  },
+  "nav": {
+    "home": "홈",
+    "inventory": "재고 차량",
+    "quiz": "내 차 찾기",
+    "guide": "미국 차 구매 가이드",
+    "financing": "나의 약속",
+    "tradeIn": "트레이드인",
+    "contact": "연락하기"
+  },
+  "hero": {
+    "greeting": "안녕하세요, 재승국입니다",
+    "tagline": "롤리의 정직한 자동차 어드바이저",
+    "subtitle": "부담 없이, 솔직하게, 당신의 삶에 맞는 차를 찾아드립니다.",
+    "cta": "내 차 찾기",
+    "ctaInventory": "재고 차량 보기"
+  },
+  "story": {
+    "title": "두 세계 사이의 삶",
+    "content": "대한민국 군대에서 복무하며 규율과 실수 후 다시 일어서는 법을 배웠습니다. 그리고 인생에서 가장 큰 도전을 했죠 — 언어도, 문화도 전혀 모르는 미국으로의 이민. 매일이 혼자만의 모험이었고, 오직 의지 하나로 처음부터 모든 것을 만들어갔습니다. 그 여정에서 배운 것 — 신뢰가 전부라는 것. 인생에서도, 자동차를 살 때도. 저와 함께하시면 정직함, 인내심, 그리고 단순히 판매가 아닌 당신의 삶에 맞는 차를 진심으로 찾아주는 사람을 만나실 겁니다.",
+    "values": {
+      "title": "왜 저와 함께하나요",
+      "honest": "100% 정직",
+      "honestDesc": "모든 차에 대해 솔직히 말씀드립니다 — 제가 판매를 못 하더라도요.",
+      "noPressure": "부담 제로",
+      "noPressureDesc": "천천히 결정하세요. 도와드리려고 여기 있는 겁니다.",
+      "bilingual": "한국어 & 영어",
+      "bilingualDesc": "두 언어 모두 편하게 상담해 드립니다.",
+      "personal": "맞춤 서비스",
+      "personalDesc": "이름도, 가족도, 중요한 것도 기억합니다."
+    }
+  },
+  "inventory": {
+    "title": "재고 차량",
+    "subtitle": "현재 판매 가능한 차량을 확인하세요",
+    "filterAll": "전체",
+    "filterNew": "신차",
+    "filterUsed": "중고",
+    "noResults": "필터에 맞는 차량이 없습니다. 검색 조건을 조정해 보세요.",
+    "price": "가격",
+    "mileage": "주행거리",
+    "miles": "마일",
+    "new": "신차",
+    "used": "중고",
+    "viewDetails": "상세 보기",
+    "checkAvailability": "재고 확인",
+    "verifyAvailability": "재고 확인 필요"
+  },
+  "quiz": {
+    "title": "내 차 찾기",
+    "subtitle": "라이프스타일에 대한 몇 가지 질문에 답하시면, 딱 맞는 차를 찾아드릴게요.",
+    "start": "시작하기",
+    "next": "다음",
+    "back": "이전",
+    "seeResults": "결과 보기",
+    "resultsTitle": "추천 차량",
+    "resultsSubtitle": "라이프스타일에 맞는 최고의 차량입니다:",
+    "noMatch": "지금은 완벽한 매칭이 없네요 — 하지만 상담해 주세요! 꼭 맞는 차를 찾아드릴게요.",
+    "closeMatch": "완벽한 매칭은 아니지만 비슷한 차량이에요 — 상담해 주시면 딱 맞는 걸 찾아드릴게요.",
+    "contactMe": "이 차 문의하기",
+    "q1": { "question": "평소 운전은 어떻게 하세요?", "a1": "시내 — 짧은 이동", "a2": "교외 — 보통 출퇴근", "a3": "고속도로 — 긴 출퇴근", "a4": "다 섞여 있어요" },
+    "q2": { "question": "누구와 함께 타나요?", "a1": "혼자 (또는 둘이)", "a2": "작은 가족 (아이 1-2명)", "a3": "큰 가족 (3열 필요!)", "a4": "짐 / 화물을 실어요" },
+    "q3": { "question": "취미가 뭐예요?", "a1": "도시 생활 — 맛집, 쇼핑", "a2": "아웃도어 — 캠핑, 등산", "a3": "로드트립", "a4": "스포츠 / 장비 운반" },
+    "q4": { "question": "어떤 느낌의 차를 원하세요?", "a1": "실용적 & 믿음직", "a2": "스포티 & 재미", "a3": "고급스럽고 편안한", "a4": "터프하고 강인한" },
+    "q5": { "question": "연료 선호?", "a1": "일반 가솔린", "a2": "하이브리드 (연비 절약)", "a3": "전기차 (EV)", "a4": "상관없어요" },
+    "q6": {
+      "question": "어떤 기능이 중요하세요?",
+      "hint": "해당되는 것을 모두 선택하세요 — 많이 선택할수록 더 잘 매칭해 드릴 수 있어요.",
+      "multiSelect": true,
+      "options": {
+        "apple_carplay": "Apple CarPlay",
+        "android_auto": "Android Auto",
+        "heated_seats": "열선 시트",
+        "cooled_seats": "통풍 시트",
+        "heated_steering": "열선 스티어링 휠",
+        "sunroof": "파노라마 선루프",
+        "leather": "가죽 인테리어",
+        "awd": "AWD / 4WD (사륜구동)",
+        "backup_camera": "후방 카메라",
+        "blind_spot": "사각지대 모니터",
+        "lane_assist": "차선 유지 보조",
+        "adaptive_cruise": "어댑티브 크루즈 컨트롤",
+        "parking_sensors": "주차 센서",
+        "remote_start": "원격 시동",
+        "keyless_entry": "푸시 버튼 시동 / 스마트키",
+        "wireless_charging": "무선 폰 충전",
+        "premium_audio": "프리미엄 사운드 (Harman Kardon, Bose 등)",
+        "third_row": "3열 시트",
+        "tow_package": "견인 패키지",
+        "roof_rack": "루프랙 / 레일",
+        "heads_up": "헤드업 디스플레이",
+        "digital_dash": "디지털 계기판",
+        "power_liftgate": "전동 트렁크",
+        "ventilated_seats": "메모리 시트"
+      }
+    },
+    "q7": { "question": "월 납입금 예산은?", "hint": "간단 계산법: 금융 $1,000당 월 약 $20. 즉, $20K 차 ≈ 월 $400, $30K 차 ≈ 월 $600.", "a1": "$400 이하/월 (~$20K 차량)", "a2": "$400 - $600/월 (~$20K-$30K 차량)", "a3": "$600 - $800/월 (~$30K-$40K 차량)", "a4": "$800 이상/월 (~$40K+ 차량)" }
+  },
+  "contact": {
+    "title": "연락하기",
+    "subtitle": "차 찾을 준비 되셨나요? 편하신 방법으로 연락 주세요.",
+    "name": "이름",
+    "phone": "전화번호",
+    "email": "이메일 (선택)",
+    "language": "선호 언어",
+    "message": "어떤 차를 찾고 계세요?",
+    "appointment": "방문 예약을 원합니다",
+    "submit": "메시지 보내기",
+    "success": "메시지를 보냈습니다! 곧 연락드리겠습니다.",
+    "callMe": "전화하기",
+    "textMe": "문자하기",
+    "emailMe": "이메일하기",
+    "visitMe": "방문하기",
+    "address": "Fred Anderson Kia of Raleigh\n7001 Capital Blvd, Raleigh, NC 27616"
+  },
+  "tradeIn": {
+    "title": "내 차 트레이드인",
+    "subtitle": "현재 차의 공정한 가치를 받으세요. 사진을 올려주시면 정직한 견적을 드리겠습니다.",
+    "vin": "VIN 번호",
+    "year": "연식",
+    "make": "제조사",
+    "model": "모델",
+    "mileage": "주행거리",
+    "condition": "상태",
+    "conditionExcellent": "최상",
+    "conditionGood": "양호",
+    "conditionFair": "보통",
+    "conditionPoor": "하",
+    "photos": "사진 업로드",
+    "photosHint": "전면, 후면, 양옆, 실내, 계기판, 손상 부분",
+    "notes": "추가 메모",
+    "disclaimer": "이것은 견적일 뿐입니다. 최종 트레이드인 가격은 방문 시 결정됩니다.",
+    "submit": "트레이드인 신청"
+  },
+  "guide": {
+    "title": "미국에서 처음 차를 사시나요?",
+    "subtitle": "이민자, 유학생, 처음 차 사는 분들을 위한 완벽 가이드."
+  },
+  "financing": {
+    "title": "놀랄 일 없는 약속",
+    "subtitle": "대부분의 딜러는 당신이 혼란스러운 걸 원해요. 저는 준비된 걸 원해요."
+  },
+  "footer": {
+    "copyright": "© 2026 Drive with Jae. All rights reserved.",
+    "privacy": "개인정보처리방침",
+    "hours": "영업시간: 월-토 오전 9시-오후 8시, 일요일 휴무",
+    "location": "Fred Anderson Kia of Raleigh"
+  },
+  "common": {
+    "learnMore": "자세히 보기",
+    "getStarted": "시작하기",
+    "backToHome": "홈으로 돌아가기"
+  }
+}

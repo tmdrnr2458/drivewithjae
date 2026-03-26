@@ -1,0 +1,158 @@
+{
+  "meta": {
+    "title": "Drive with Jae | Honest Car Buying in Raleigh",
+    "description": "Find your perfect car with Seungkook Jae. No pressure, honest service. Korean & English. Fred Anderson Kia, Raleigh NC."
+  },
+  "nav": {
+    "home": "Home",
+    "inventory": "Inventory",
+    "quiz": "Find Your Car",
+    "guide": "New to US Car Buying?",
+    "financing": "My Promise",
+    "tradeIn": "Trade-In",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm Seungkook Jae",
+    "tagline": "Your honest car advisor in Raleigh",
+    "subtitle": "No pressure. No games. Just the right car for your life.",
+    "cta": "Find Your Perfect Car",
+    "ctaInventory": "Browse Inventory"
+  },
+  "story": {
+    "title": "A Life Between Two Worlds",
+    "content": "I served in the South Korean military, where I learned discipline and how to rebuild after mistakes. Then I took the biggest leap of my life — moving to America, a country whose language and culture I had never experienced. Every day was a solo adventure, figuring things out from scratch with nothing but determination. That journey taught me that trust is everything — in life and in car buying. When you work with me, you get honesty, patience, and someone who genuinely cares about finding the right car for YOUR life — not just making a sale.",
+    "values": {
+      "title": "Why Work With Me",
+      "honest": "100% Honest",
+      "honestDesc": "I'll tell you the truth about every car — even if it means I don't make a sale.",
+      "noPressure": "No Pressure",
+      "noPressureDesc": "Take your time. I'm here to help, not push.",
+      "bilingual": "Korean & English",
+      "bilingualDesc": "Comfortable in both languages. 한국어로 편하게 상담하세요.",
+      "personal": "Personal Service",
+      "personalDesc": "I remember your name, your family, and what matters to you."
+    }
+  },
+  "inventory": {
+    "title": "Current Inventory",
+    "subtitle": "Browse our available vehicles",
+    "filterAll": "All",
+    "filterNew": "New",
+    "filterUsed": "Used",
+    "noResults": "No vehicles match your filters. Try adjusting your search.",
+    "price": "Price",
+    "mileage": "Mileage",
+    "miles": "miles",
+    "new": "New",
+    "used": "Used",
+    "viewDetails": "View Details",
+    "checkAvailability": "Check Availability",
+    "verifyAvailability": "Verify Availability"
+  },
+  "quiz": {
+    "title": "Find Your Perfect Car",
+    "subtitle": "Answer a few questions about your life, and I'll match you with the right vehicle.",
+    "start": "Let's Go",
+    "next": "Next",
+    "back": "Back",
+    "seeResults": "See My Matches",
+    "resultsTitle": "Your Top Matches",
+    "resultsSubtitle": "Based on your lifestyle, here are the best cars for you:",
+    "noMatch": "No perfect matches right now — but let's talk! I can help you find exactly what you need.",
+    "closeMatch": "These aren't a perfect match, but close — let's talk and find the right one for you.",
+    "contactMe": "Contact Me About This Car",
+    "q1": { "question": "What's your daily drive like?", "a1": "City streets — short trips", "a2": "Suburban — moderate commute", "a3": "Highway — long commute", "a4": "Mix of everything" },
+    "q2": { "question": "Who rides with you?", "a1": "Just me (or me + partner)", "a2": "Small family (1-2 kids)", "a3": "Big family (need a 3rd row!)", "a4": "I haul gear / cargo" },
+    "q3": { "question": "What do you do for fun?", "a1": "City life — dining, shopping", "a2": "Outdoor adventures — camping, hiking", "a3": "Road trips", "a4": "Sports / hauling equipment" },
+    "q4": { "question": "What vibe do you want?", "a1": "Practical & reliable", "a2": "Sporty & fun", "a3": "Luxurious & comfortable", "a4": "Tough & rugged" },
+    "q5": { "question": "Fuel preference?", "a1": "Regular gas", "a2": "Hybrid (save on gas)", "a3": "Full electric (EV)", "a4": "No preference" },
+    "q6": {
+      "question": "Which features matter to you?",
+      "hint": "Select all that apply — the more you pick, the better I can match you.",
+      "multiSelect": true,
+      "options": {
+        "apple_carplay": "Apple CarPlay",
+        "android_auto": "Android Auto",
+        "heated_seats": "Heated Seats",
+        "cooled_seats": "Ventilated / Cooled Seats",
+        "heated_steering": "Heated Steering Wheel",
+        "sunroof": "Panoramic Sunroof",
+        "leather": "Leather Interior",
+        "awd": "AWD / 4WD",
+        "backup_camera": "Backup Camera",
+        "blind_spot": "Blind Spot Monitor",
+        "lane_assist": "Lane Keep Assist",
+        "adaptive_cruise": "Adaptive Cruise Control",
+        "parking_sensors": "Parking Sensors",
+        "remote_start": "Remote Start",
+        "keyless_entry": "Push Button Start / Keyless Entry",
+        "wireless_charging": "Wireless Phone Charging",
+        "premium_audio": "Premium Sound System (Harman Kardon, Bose, etc.)",
+        "third_row": "3rd Row Seating",
+        "tow_package": "Towing Package",
+        "roof_rack": "Roof Rack / Rails",
+        "heads_up": "Heads-Up Display",
+        "digital_dash": "Digital Instrument Cluster",
+        "power_liftgate": "Power Liftgate",
+        "ventilated_seats": "Memory Seats"
+      }
+    },
+    "q7": { "question": "What's your monthly payment budget?", "hint": "Quick rule: every $1,000 financed ≈ $20/month. So a $20K car ≈ $400/mo, a $30K car ≈ $600/mo.", "a1": "Under $400/mo (~$20K car)", "a2": "$400 - $600/mo (~$20K-$30K car)", "a3": "$600 - $800/mo (~$30K-$40K car)", "a4": "Over $800/mo (~$40K+ car)" }
+  },
+  "contact": {
+    "title": "Let's Talk",
+    "subtitle": "Ready to find your perfect car? Reach out however you're most comfortable.",
+    "name": "Your Name",
+    "phone": "Phone Number",
+    "email": "Email (optional)",
+    "language": "Preferred Language",
+    "message": "What are you looking for?",
+    "appointment": "I'd like to schedule a visit",
+    "submit": "Send Message",
+    "success": "Message sent! I'll get back to you soon.",
+    "callMe": "Call Me",
+    "textMe": "Text Me",
+    "emailMe": "Email Me",
+    "visitMe": "Visit Me",
+    "address": "Fred Anderson Kia of Raleigh\n7001 Capital Blvd, Raleigh, NC 27616"
+  },
+  "tradeIn": {
+    "title": "Trade-In Your Vehicle",
+    "subtitle": "Get a fair value for your current car. Upload photos and I'll give you an honest estimate.",
+    "vin": "VIN Number",
+    "year": "Year",
+    "make": "Make",
+    "model": "Model",
+    "mileage": "Mileage",
+    "condition": "Condition",
+    "conditionExcellent": "Excellent",
+    "conditionGood": "Good",
+    "conditionFair": "Fair",
+    "conditionPoor": "Poor",
+    "photos": "Upload Photos",
+    "photosHint": "Front, rear, both sides, interior, odometer, any damage",
+    "notes": "Additional Notes",
+    "disclaimer": "This is an estimate only. Final trade-in value will be determined during your visit.",
+    "submit": "Submit Trade-In"
+  },
+  "guide": {
+    "title": "New to American Car Buying?",
+    "subtitle": "A complete guide for immigrants, international students, and first-time buyers."
+  },
+  "financing": {
+    "title": "The No-Surprises Promise",
+    "subtitle": "Most dealers want you confused. I want you prepared."
+  },
+  "footer": {
+    "copyright": "© 2026 Drive with Jae. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "hours": "Hours: Mon-Sat 9AM-8PM, Sun Closed",
+    "location": "Fred Anderson Kia of Raleigh"
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "getStarted": "Get Started",
+    "backToHome": "Back to Home"
+  }
+}

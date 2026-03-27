@@ -31,7 +31,7 @@ const FEATURE_LABELS: Record<string, string> = {
   heads_up: "Heads-Up",
   digital_dash: "Digital Dash",
   power_liftgate: "Power Liftgate",
-  ventilated_seats: "Memory Seats",
+  ventilated_seats: "Ventilated Seats",
 };
 
 export function VehicleCard({ vehicle, locale }: { vehicle: Vehicle; locale: string }) {

@@ -161,9 +161,13 @@ export function LifestyleQuiz() {
         </div>
         {results.dealerVehicles.length > 0 ? (
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {results.dealerVehicles.map((vehicle) => (
-              <DealerVehicleCard key={vehicle.vin} vehicle={vehicle} />
-            ))}
+            {results.dealerVehicles.map((vehicle) => {
+              const quizMatch = results.quizVehicles.find((v) => v.id === vehicle.vin);
+              const features = quizMatch?.lifestyleTags.features;
+              return (
+                <DealerVehicleCard key={vehicle.vin} vehicle={vehicle} features={features} />
+              );
+            })}
           </div>
         ) : (
           <div className="py-12 text-center">

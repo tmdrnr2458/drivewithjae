@@ -6,7 +6,35 @@ import { Badge } from "@/components/ui/badge";
 import { Link } from "@/i18n/navigation";
 import { Car, ExternalLink } from "lucide-react";
 
-export function DealerVehicleCard({ vehicle }: { vehicle: DealerVehicle }) {
+// Human-readable feature labels (same as VehicleCard)
+const FEATURE_LABELS: Record<string, string> = {
+  apple_carplay: "CarPlay",
+  android_auto: "Android Auto",
+  heated_seats: "Heated Seats",
+  cooled_seats: "Cooled Seats",
+  heated_steering: "Heated Wheel",
+  sunroof: "Sunroof",
+  leather: "Leather",
+  awd: "AWD",
+  backup_camera: "Backup Cam",
+  blind_spot: "Blind Spot",
+  lane_assist: "Lane Assist",
+  adaptive_cruise: "Smart Cruise",
+  parking_sensors: "Park Sensors",
+  remote_start: "Remote Start",
+  keyless_entry: "Push Start",
+  wireless_charging: "Wireless Charge",
+  premium_audio: "Premium Audio",
+  third_row: "3rd Row",
+  tow_package: "Tow Package",
+  roof_rack: "Roof Rack",
+  heads_up: "Heads-Up",
+  digital_dash: "Digital Dash",
+  power_liftgate: "Power Liftgate",
+  ventilated_seats: "Ventilated Seats",
+};
+
+export function DealerVehicleCard({ vehicle, features }: { vehicle: DealerVehicle; features?: string[] }) {
   const hasImages = vehicle.images.length > 0;
   const mainImage = hasImages ? vehicle.images[0] : null;
 
@@ -131,6 +159,22 @@ export function DealerVehicleCard({ vehicle }: { vehicle: DealerVehicle }) {
           >
             View CARFAX Report <ExternalLink className="h-3 w-3" />
           </a>
+        )}
+
+        {/* Features */}
+        {features && features.length > 0 && (
+          <div className="mb-2 flex flex-wrap gap-1">
+            {features.slice(0, 6).map((tag) => (
+              <Badge key={tag} variant="outline" className="text-xs">
+                {FEATURE_LABELS[tag] || tag.replace(/_/g, " ")}
+              </Badge>
+            ))}
+            {features.length > 6 && (
+              <Badge variant="outline" className="text-xs text-muted-foreground">
+                +{features.length - 6} more
+              </Badge>
+            )}
+          </div>
         )}
 
         {/* Stock # and VIN */}

@@ -6,6 +6,8 @@
   "nav": {
     "home": "홈",
     "inventory": "재고 차량",
+    "inventoryNew": "기아 신차",
+    "inventoryUsed": "중고차",
     "quiz": "내 차 찾기",
     "guide": "미국 차 구매 가이드",
     "financing": "나의 약속",
@@ -36,6 +38,8 @@
   },
   "inventory": {
     "title": "재고 차량",
+    "titleNew": "기아 신차",
+    "titleUsed": "중고 차량",
     "subtitle": "현재 판매 가능한 차량을 확인하세요",
     "filterAll": "전체",
     "filterNew": "신차",

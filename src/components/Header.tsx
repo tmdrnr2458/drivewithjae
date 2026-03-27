@@ -16,7 +16,8 @@ export function Header() {
   const [open, setOpen] = useState(false);
 
   const navItems = [
-    { href: "/inventory", label: t("inventory") },
+    { href: "/inventory/new", label: t("inventoryNew") },
+    { href: "/inventory/used", label: t("inventoryUsed") },
     { href: "/quiz", label: t("quiz") },
     { href: "/guide", label: t("guide") },
     { href: "/financing", label: t("financing") },
@@ -45,7 +46,7 @@ export function Header() {
               key={item.href}
               href={item.href}
               className={`rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground ${
-                pathname === item.href ? "bg-accent text-accent-foreground" : "text-muted-foreground"
+                pathname.startsWith(item.href) ? "bg-accent text-accent-foreground" : "text-muted-foreground"
               }`}
             >
               {item.label}
@@ -81,7 +82,7 @@ export function Header() {
                     href={item.href}
                     onClick={() => setOpen(false)}
                     className={`rounded-md px-3 py-2.5 text-base font-medium transition-colors hover:bg-accent ${
-                      pathname === item.href ? "bg-accent text-accent-foreground" : ""
+                      pathname.startsWith(item.href) ? "bg-accent text-accent-foreground" : ""
                     }`}
                   >
                     {item.label}

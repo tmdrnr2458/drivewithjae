@@ -28,6 +28,9 @@ export interface FilterState {
   bodyStyles: string[];
   features: string[];
   fuelTypes: string[];
+  drivetrains: string[];
+  colors: string[];
+  certifiedOnly: boolean;
   search: string;
 }
 
@@ -41,6 +44,9 @@ export const EMPTY_FILTERS: FilterState = {
   bodyStyles: [],
   features: [],
   fuelTypes: [],
+  drivetrains: [],
+  colors: [],
+  certifiedOnly: false,
   search: "",
 };
 
@@ -81,49 +87,73 @@ export const FUEL_TYPES = [
   { key: "ev", label: "Electric" },
 ];
 
+export const DRIVETRAIN_OPTIONS = [
+  { key: "fwd", label: "FWD" },
+  { key: "rwd", label: "RWD" },
+  { key: "awd", label: "AWD" },
+  { key: "4wd", label: "4WD" },
+];
+
 export const FEATURE_GROUPS = {
-  comfort: {
-    label: "Comfort",
+  winter_ready: {
+    label: "Winter Ready \u2744\uFE0F",
     features: [
       { key: "heated_seats", label: "Heated Seats" },
-      { key: "cooled_seats", label: "Cooled Seats" },
       { key: "heated_steering", label: "Heated Wheel" },
-      { key: "leather", label: "Leather" },
-      { key: "sunroof", label: "Sunroof" },
-      { key: "ventilated_seats", label: "Ventilated Seats" },
       { key: "remote_start", label: "Remote Start" },
+      { key: "awd", label: "AWD" },
     ],
   },
-  tech: {
-    label: "Tech",
+  family_friendly: {
+    label: "Family Friendly \uD83D\uDC68\u200D\uD83D\uDC69\u200D\uD83D\uDC67\u200D\uD83D\uDC66",
+    features: [
+      { key: "third_row", label: "3rd Row" },
+      { key: "power_liftgate", label: "Power Liftgate" },
+      { key: "backup_camera", label: "Backup Cam" },
+      { key: "blind_spot", label: "Blind Spot" },
+      { key: "rear_cross_traffic", label: "Rear Cross Traffic" },
+    ],
+  },
+  road_trip: {
+    label: "Road Trip Ready \uD83D\uDEE3\uFE0F",
+    features: [
+      { key: "adaptive_cruise", label: "Smart Cruise" },
+      { key: "lane_assist", label: "Lane Assist" },
+      { key: "premium_audio", label: "Premium Audio" },
+      { key: "roof_rack", label: "Roof Rack" },
+      { key: "tow_package", label: "Tow Package" },
+    ],
+  },
+  tech_lover: {
+    label: "Tech Lover \uD83D\uDCF1",
     features: [
       { key: "apple_carplay", label: "CarPlay" },
       { key: "android_auto", label: "Android Auto" },
       { key: "wireless_charging", label: "Wireless Charging" },
       { key: "digital_dash", label: "Digital Dash" },
       { key: "heads_up", label: "Heads-Up Display" },
-      { key: "premium_audio", label: "Premium Audio" },
       { key: "keyless_entry", label: "Push Start" },
     ],
   },
-  safety: {
-    label: "Safety",
+  luxury_feel: {
+    label: "Luxury Feel \u2728",
+    features: [
+      { key: "leather", label: "Leather" },
+      { key: "cooled_seats", label: "Cooled Seats" },
+      { key: "sunroof", label: "Sunroof" },
+      { key: "ventilated_seats", label: "Ventilated Seats" },
+      { key: "premium_audio", label: "Premium Audio" },
+      { key: "parking_sensors", label: "Park Sensors" },
+    ],
+  },
+  safety_first: {
+    label: "Safety First \uD83D\uDEE1\uFE0F",
     features: [
       { key: "backup_camera", label: "Backup Cam" },
       { key: "blind_spot", label: "Blind Spot" },
       { key: "lane_assist", label: "Lane Assist" },
       { key: "adaptive_cruise", label: "Smart Cruise" },
       { key: "parking_sensors", label: "Park Sensors" },
-    ],
-  },
-  utility: {
-    label: "Utility",
-    features: [
-      { key: "awd", label: "AWD" },
-      { key: "third_row", label: "3rd Row" },
-      { key: "tow_package", label: "Tow Package" },
-      { key: "roof_rack", label: "Roof Rack" },
-      { key: "power_liftgate", label: "Power Liftgate" },
     ],
   },
 };
@@ -146,10 +176,13 @@ interface InventoryFiltersProps {
   brandHierarchy: BrandHierarchy[];
   availableBodyStyles: string[];
   availableFuelTypes: string[];
+  availableColors: string[];
+  availableDrivetrains: string[];
   totalCount: number;
   filteredCount: number;
   newCount: number;
   usedCount: number;
+  showCpoToggle?: boolean;
 }
 
 // ─── Collapsible section ───────────────────────────────
@@ -260,10 +293,13 @@ export function InventoryFilters({
   brandHierarchy,
   availableBodyStyles,
   availableFuelTypes,
+  availableColors,
+  availableDrivetrains,
   totalCount,
   filteredCount,
   newCount,
   usedCount,
+  showCpoToggle = false,
 }: InventoryFiltersProps) {
   const [expandedMakes, setExpandedMakes] = useState<Set<string>>(new Set());
   const [expandedModels, setExpandedModels] = useState<Set<string>>(new Set());
@@ -324,7 +360,7 @@ export function InventoryFilters({
             <PillButton
               key={t}
               active={filters.type === t}
-              onClick={() => update({ type: t, ...(t === "new" ? { mileageRanges: [] } : {}) })}
+              onClick={() => update({ type: t, ...(t === "new" ? { mileageRanges: [], certifiedOnly: false } : {}) })}
             >
               {t === "all" ? "All" : t === "new" ? "New" : "Used"} ({count})
             </PillButton>
@@ -333,6 +369,28 @@ export function InventoryFilters({
       </div>
 
       <Separator />
+
+      {/* CPO toggle — only on Used page */}
+      {showCpoToggle && filters.type !== "new" && (
+        <>
+          <div className="flex items-center justify-between py-2">
+            <span className="text-sm font-semibold text-foreground">Certified Pre-Owned</span>
+            <button
+              onClick={() => update({ certifiedOnly: !filters.certifiedOnly })}
+              className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
+                filters.certifiedOnly ? "bg-sky-500" : "bg-gray-300 dark:bg-gray-600"
+              }`}
+            >
+              <span
+                className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
+                  filters.certifiedOnly ? "translate-x-6" : "translate-x-1"
+                }`}
+              />
+            </button>
+          </div>
+          <Separator />
+        </>
+      )}
 
       {/* Brand / Model / Trim hierarchy */}
       <FilterSection
@@ -498,6 +556,30 @@ export function InventoryFilters({
 
       <Separator />
 
+      {/* Drivetrain */}
+      {availableDrivetrains.length > 0 && (
+        <>
+          <FilterSection
+            title="Drivetrain"
+            showClear={filters.drivetrains.length > 0}
+            onClear={() => update({ drivetrains: [] })}
+          >
+            <div className="flex flex-wrap gap-1.5">
+              {DRIVETRAIN_OPTIONS.filter((dt) => availableDrivetrains.includes(dt.key)).map((dt) => (
+                <PillButton
+                  key={dt.key}
+                  active={filters.drivetrains.includes(dt.key)}
+                  onClick={() => update({ drivetrains: toggleArrayItem(filters.drivetrains, dt.key) })}
+                >
+                  {dt.label}
+                </PillButton>
+              ))}
+            </div>
+          </FilterSection>
+          <Separator />
+        </>
+      )}
+
       {/* Fuel Type */}
       <FilterSection
         title="Fuel Type"
@@ -526,6 +608,35 @@ export function InventoryFilters({
 
       <Separator />
 
+      {/* Color */}
+      {availableColors.length > 0 && (
+        <>
+          <FilterSection
+            title="Exterior Color"
+            defaultOpen={false}
+            showClear={filters.colors.length > 0}
+            onClear={() => update({ colors: [] })}
+          >
+            <div className="flex flex-wrap gap-1.5">
+              {availableColors.map((color) => (
+                <PillButton
+                  key={color}
+                  active={filters.colors.includes(color)}
+                  onClick={() => update({ colors: toggleArrayItem(filters.colors, color) })}
+                >
+                  <span
+                    className="inline-block h-3 w-3 rounded-full border border-gray-300 mr-1.5"
+                    style={{ backgroundColor: colorToHex(color) }}
+                  />
+                  {color}
+                </PillButton>
+              ))}
+            </div>
+          </FilterSection>
+          <Separator />
+        </>
+      )}
+
       {/* Features */}
       <FilterSection
         title="Features"
@@ -542,7 +653,7 @@ export function InventoryFilters({
               <div className="space-y-0.5">
                 {group.features.map((f) => (
                   <CheckboxItem
-                    key={f.key}
+                    key={`${groupKey}-${f.key}`}
                     checked={filters.features.includes(f.key)}
                     onChange={() => update({ features: toggleArrayItem(filters.features, f.key) })}
                     label={f.label}
@@ -555,4 +666,39 @@ export function InventoryFilters({
       </FilterSection>
     </div>
   );
+}
+
+// ─── Color name to hex helper ─────────────────────────
+
+function colorToHex(color: string): string {
+  const c = color.toLowerCase();
+  const map: Record<string, string> = {
+    black: "#1a1a1a",
+    white: "#f5f5f5",
+    silver: "#c0c0c0",
+    gray: "#808080",
+    grey: "#808080",
+    red: "#dc2626",
+    blue: "#2563eb",
+    green: "#16a34a",
+    yellow: "#eab308",
+    orange: "#ea580c",
+    brown: "#92400e",
+    beige: "#d4c5a9",
+    gold: "#ca8a04",
+    maroon: "#7f1d1d",
+    navy: "#1e3a5f",
+    burgundy: "#800020",
+    tan: "#d2b48c",
+    cream: "#fffdd0",
+    charcoal: "#36454f",
+    pearl: "#eae0c8",
+    platinum: "#e5e4e2",
+    bronze: "#cd7f32",
+  };
+  // Try to match any keyword in the color name
+  for (const [keyword, hex] of Object.entries(map)) {
+    if (c.includes(keyword)) return hex;
+  }
+  return "#9ca3af"; // default gray
 }

@@ -6,6 +6,8 @@
   "nav": {
     "home": "Home",
     "inventory": "Inventory",
+    "inventoryNew": "New Kia",
+    "inventoryUsed": "Used Cars",
     "quiz": "Find Your Car",
     "guide": "New to US Car Buying?",
     "financing": "My Promise",
@@ -35,7 +37,9 @@
     }
   },
   "inventory": {
-    "title": "Current Inventory",
+    "title": "All Inventory",
+    "titleNew": "New Kia Inventory",
+    "titleUsed": "Pre-Owned Vehicles",
     "subtitle": "Browse our available vehicles",
     "filterAll": "All",
     "filterNew": "New",

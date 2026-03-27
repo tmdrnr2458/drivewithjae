@@ -14,6 +14,7 @@ import {
   BODY_STYLE_MAP,
   FUEL_TYPES,
   FEATURE_GROUPS,
+  DRIVETRAIN_OPTIONS,
   type BrandHierarchy,
 } from "./InventoryFilters";
 import { FilterChips, type FilterChip } from "./FilterChips";
@@ -46,6 +47,25 @@ function getVehiclePrice(vehicle: DealerVehicle): number {
   return parseInt(raw.replace(/[$,]/g, "")) || 0;
 }
 
+// ─── Drivetrain detection ─────────────────────────────
+
+const AWD_DEFAULT_MAKES = ["subaru"];
+
+function getVehicleDrivetrain(vehicle: DealerVehicle): string {
+  const trimLower = `${vehicle.trim} ${vehicle.model}`.toLowerCase();
+
+  if (/\b4wd\b|4x4|four.?wheel/i.test(trimLower)) return "4wd";
+  if (/\bawd\b|all.?wheel/i.test(trimLower)) return "awd";
+  if (/\brwd\b|rear.?wheel/i.test(trimLower)) return "rwd";
+  if (/\bfwd\b|front.?wheel/i.test(trimLower)) return "fwd";
+
+  // Make-based defaults
+  if (AWD_DEFAULT_MAKES.includes(vehicle.make.toLowerCase())) return "awd";
+
+  // Default to FWD for most sedans/crossovers
+  return "fwd";
+}
+
 // ─── Filter matching logic ─────────────────────────────
 
 function matchesFilters(
@@ -53,7 +73,8 @@ function matchesFilters(
   filters: FilterState,
   features: string[],
   fuel: string,
-  price: number
+  price: number,
+  drivetrain: string
 ): boolean {
   // Type filter
   if (filters.type !== "all" && vehicle.type !== filters.type) return false;
@@ -111,6 +132,21 @@ function matchesFilters(
   // Fuel types (OR within)
   if (filters.fuelTypes.length > 0) {
     if (!filters.fuelTypes.includes(fuel)) return false;
+  }
+
+  // Drivetrain (OR within)
+  if (filters.drivetrains.length > 0) {
+    if (!filters.drivetrains.includes(drivetrain)) return false;
+  }
+
+  // Color (OR within)
+  if (filters.colors.length > 0) {
+    if (!filters.colors.includes(vehicle.exteriorColor)) return false;
+  }
+
+  // Certified Pre-Owned
+  if (filters.certifiedOnly) {
+    if (!vehicle.certified) return false;
   }
 
   // Features (AND — must have ALL selected)
@@ -209,6 +245,19 @@ function buildFilterChips(filters: FilterState): FilterChip[] {
     chips.push({ key: ft, label: info?.label || ft, category: "fuelTypes" });
   }
 
+  for (const dt of filters.drivetrains) {
+    const info = DRIVETRAIN_OPTIONS.find((d) => d.key === dt);
+    chips.push({ key: dt, label: info?.label || dt, category: "drivetrains" });
+  }
+
+  for (const color of filters.colors) {
+    chips.push({ key: color, label: color, category: "colors" });
+  }
+
+  if (filters.certifiedOnly) {
+    chips.push({ key: "cpo", label: "Certified Pre-Owned", category: "certifiedOnly" });
+  }
+
   for (const feat of filters.features) {
     // Find label from groups
     let label = feat.replace(/_/g, " ");
@@ -234,14 +283,23 @@ function countActiveFilters(filters: FilterState): number {
   count += filters.mileageRanges.length;
   count += filters.bodyStyles.length;
   count += filters.fuelTypes.length;
+  count += filters.drivetrains.length;
+  count += filters.colors.length;
   count += filters.features.length;
+  if (filters.certifiedOnly) count++;
   if (filters.search) count++;
   return count;
 }
 
+// ─── Props ─────────────────────────────────────────────
+
+interface LiveInventoryBrowserProps {
+  defaultType?: "all" | "new" | "used";
+}
+
 // ─── Main component ────────────────────────────────────
 
-export function LiveInventoryBrowser() {
+export function LiveInventoryBrowser({ defaultType = "all" }: LiveInventoryBrowserProps) {
   const t = useTranslations("inventory");
   const [vehicles, setVehicles] = useState<DealerVehicle[]>([]);
   const [loading, setLoading] = useState(true);
@@ -249,7 +307,10 @@ export function LiveInventoryBrowser() {
   const [error, setError] = useState<string | null>(null);
   const [syncedAt, setSyncedAt] = useState<string | null>(null);
   const [retryCount, setRetryCount] = useState(0);
-  const [filters, setFilters] = useState<FilterState>(EMPTY_FILTERS);
+  const [filters, setFilters] = useState<FilterState>({
+    ...EMPTY_FILTERS,
+    type: defaultType,
+  });
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 
   useEffect(() => {
@@ -288,17 +349,18 @@ export function LiveInventoryBrowser() {
     }
   }
 
-  // Pre-compute features, fuel, and price for each vehicle
+  // Pre-compute features, fuel, price, and drivetrain for each vehicle
   const vehicleMeta = useMemo(() => {
     const meta = new Map<
       string,
-      { features: string[]; fuel: string; price: number }
+      { features: string[]; fuel: string; price: number; drivetrain: string }
     >();
     for (const v of vehicles) {
       meta.set(v.vin, {
         features: getVehicleFeatures(v),
         fuel: getVehicleFuel(v),
         price: getVehiclePrice(v),
+        drivetrain: getVehicleDrivetrain(v),
       });
     }
     return meta;
@@ -325,6 +387,27 @@ export function LiveInventoryBrowser() {
     return Array.from(types);
   }, [vehicles, vehicleMeta]);
 
+  const availableDrivetrains = useMemo(() => {
+    const dts = new Set<string>();
+    for (const v of vehicles) {
+      const meta = vehicleMeta.get(v.vin);
+      if (meta) dts.add(meta.drivetrain);
+    }
+    return Array.from(dts).sort();
+  }, [vehicles, vehicleMeta]);
+
+  const availableColors = useMemo(() => {
+    const colors = new Map<string, number>();
+    for (const v of vehicles) {
+      const c = v.exteriorColor;
+      if (c) colors.set(c, (colors.get(c) || 0) + 1);
+    }
+    // Sort by count descending
+    return Array.from(colors.entries())
+      .sort((a, b) => b[1] - a[1])
+      .map(([color]) => color);
+  }, [vehicles]);
+
   const newCount = useMemo(() => vehicles.filter((v) => v.type === "new").length, [vehicles]);
   const usedCount = useMemo(() => vehicles.filter((v) => v.type === "used").length, [vehicles]);
 
@@ -333,7 +416,7 @@ export function LiveInventoryBrowser() {
     return vehicles.filter((v) => {
       const meta = vehicleMeta.get(v.vin);
       if (!meta) return false;
-      return matchesFilters(v, filters, meta.features, meta.fuel, meta.price);
+      return matchesFilters(v, filters, meta.features, meta.fuel, meta.price, meta.drivetrain);
     });
   }, [vehicles, filters, vehicleMeta]);
 
@@ -347,6 +430,8 @@ export function LiveInventoryBrowser() {
         setFilters((prev) => ({ ...prev, type: "all" }));
       } else if (cat === "search") {
         setFilters((prev) => ({ ...prev, search: "" }));
+      } else if (cat === "certifiedOnly") {
+        setFilters((prev) => ({ ...prev, certifiedOnly: false }));
       } else {
         setFilters((prev) => {
           const arr = prev[cat] as string[];
@@ -358,8 +443,15 @@ export function LiveInventoryBrowser() {
   );
 
   const handleClearAll = useCallback(() => {
-    setFilters(EMPTY_FILTERS);
-  }, []);
+    setFilters({ ...EMPTY_FILTERS, type: defaultType });
+  }, [defaultType]);
+
+  // Dynamic title based on type
+  const pageTitle = useMemo(() => {
+    if (filters.type === "new") return t("titleNew");
+    if (filters.type === "used") return t("titleUsed");
+    return t("title");
+  }, [filters.type, t]);
 
   // ─── Loading / syncing / error states ──────────────
 
@@ -406,10 +498,13 @@ export function LiveInventoryBrowser() {
       brandHierarchy={brandHierarchy}
       availableBodyStyles={availableBodyStyles}
       availableFuelTypes={availableFuelTypes}
+      availableColors={availableColors}
+      availableDrivetrains={availableDrivetrains}
       totalCount={vehicles.length}
       filteredCount={filtered.length}
       newCount={newCount}
       usedCount={usedCount}
+      showCpoToggle={defaultType === "used"}
     />
   );
 
@@ -418,7 +513,7 @@ export function LiveInventoryBrowser() {
       {/* Header */}
       <div className="mb-6 text-center">
         <h1 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">
-          {t("title")}
+          {pageTitle}
         </h1>
         <p className="text-muted-foreground">
           {vehicles.length} vehicles &middot; {newCount} new &middot; {usedCount} used

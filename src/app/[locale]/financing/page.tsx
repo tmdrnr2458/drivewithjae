@@ -445,7 +445,7 @@ export default function FinancingPage() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-base text-emerald-700 dark:text-emerald-400">
                 <CheckCircle className="h-5 w-5" />
-                {isKo ? "협상 가능한 것" : "What I CAN negotiate"}
+                {isKo ? "깎을 수 있는 것" : "What I CAN negotiate"}
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -467,7 +467,7 @@ export default function FinancingPage() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-base text-red-700 dark:text-red-400">
                 <XCircle className="h-5 w-5" />
-                {isKo ? "협상 불가능한 것" : "What I CANNOT negotiate"}
+                {isKo ? "못 깎는 것 (법으로 정해진 거)" : "What I CANNOT negotiate"}
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -495,12 +495,12 @@ export default function FinancingPage() {
       <section className="mb-16">
         <h2 className="mb-2 text-center text-2xl font-bold sm:text-3xl">
           {isKo
-            ? "걱정별로 정리한 실제 후기"
+            ? "같은 걱정 하셨던 분들의 후기"
             : "Reviews Organized by Your Fear"}
         </h2>
         <p className="mb-10 text-center text-muted-foreground">
           {isKo
-            ? "다른 분들도 같은 걱정을 했습니다. 그분들의 이야기를 들어보세요."
+            ? "다른 분들도 똑같이 걱정했어요. 그분들이 직접 하신 말이에요."
             : "Other people had the same worries. Here's what they said."}
         </p>
 
@@ -538,7 +538,7 @@ export default function FinancingPage() {
         </h2>
         <p className="mb-10 text-center text-muted-foreground">
           {isKo
-            ? "제승국이 직접 드리는 약속입니다."
+            ? "제승국이 직접 드리는 약속이에요."
             : "Personal commitments from me, Seungkook, to you."}
         </p>
 
@@ -568,12 +568,12 @@ export default function FinancingPage() {
       <section className="mb-16">
         <h2 className="mb-2 text-center text-2xl font-bold sm:text-3xl">
           {isKo
-            ? "더 많은 분들이 물어봤으면 하는 질문들"
+            ? "이런 것도 물어봐도 돼요"
             : "Questions I Wish More People Asked"}
         </h2>
         <p className="mb-10 text-center text-muted-foreground">
           {isKo
-            ? "솔직한 답변을 드리겠습니다."
+            ? "솔직하게 답해드릴게요. 눌러서 확인하세요."
             : "Honest answers from me. Tap to expand."}
         </p>
 
@@ -596,11 +596,11 @@ export default function FinancingPage() {
       <section className="text-center">
         <Heart className="mx-auto mb-4 h-10 w-10 text-sky-500" />
         <h2 className="mb-4 text-2xl font-bold sm:text-3xl">
-          {isKo ? "준비되셨나요?" : "Ready When You Are"}
+          {isKo ? "준비 되셨으면 언제든 오세요" : "Ready When You Are"}
         </h2>
         <p className="mx-auto mb-8 max-w-md text-muted-foreground">
           {isKo
-            ? "아직 궁금한 점이 있으신가요? 편하게 연락주세요."
+            ? "아직 궁금한 거 있으세요? 편하게 연락 주세요."
             : "Still have questions? Reach out. No commitment needed."}
         </p>
 
@@ -610,20 +610,20 @@ export default function FinancingPage() {
             className="inline-flex items-center gap-2 rounded-lg bg-sky-500 px-8 py-3 font-semibold text-white transition-colors hover:bg-sky-600"
           >
             <MessageCircle className="h-5 w-5" />
-            {isKo ? "부담 없는 방문 예약" : "Schedule a No-Pressure Visit"}
+            {isKo ? "편하게 방문 예약하기" : "Schedule a No-Pressure Visit"}
           </Link>
           <a
             href="sms:+19842421715"
             className="inline-flex items-center gap-2 rounded-lg border border-sky-500 px-8 py-3 font-semibold text-sky-600 transition-colors hover:bg-sky-50 dark:text-sky-400 dark:hover:bg-sky-950/30"
           >
             <Phone className="h-5 w-5" />
-            {isKo ? "문자로 질문하기" : "Text Me Your Questions"}
+            {isKo ? "문자로 물어보기" : "Text Me Your Questions"}
           </a>
         </div>
 
         <p className="mt-6 text-sm text-muted-foreground">
           {isKo
-            ? "아직 궁금한 점이 있으신가요? 편하게 연락주세요."
+            ? "부담 없이 언제든 연락 주세요."
             : "Still have questions? Don\u2019t hesitate to reach out."}
         </p>
       </section>

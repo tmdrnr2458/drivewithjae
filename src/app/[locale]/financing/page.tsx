@@ -271,7 +271,7 @@ const faqs = [
     qEn: "What if my credit isn't great?",
     qKo: "신용이 좋지 않으면 어떡하나요?",
     aEn: "We work with many lenders. I'll find the best option for your situation — honestly.",
-    aKo: "여러 금융기관과 협력합니다. 당신의 상황에 맞는 최선의 옵션을 찾아드리겠습니다.",
+    aKo: "여러 금융기관과 협력합니다. 고객님 상황에 맞는 최선의 옵션을 찾아드리겠습니다.",
   },
 ];
 
@@ -338,7 +338,7 @@ export default function FinancingPage() {
         </p>
         <p className="mx-auto max-w-xl text-muted-foreground leading-relaxed">
           {isKo
-            ? "저는 재승국입니다. 이 페이지는 딜러십에 오시기 전에 모든 것을 알려드리기 위해 만들었습니다. 놀랄 일이 없도록."
+            ? "저는 제승국입니다. 이 페이지는 딜러십에 오시기 전에 모든 것을 알려드리기 위해 만들었습니다. 놀랄 일이 없도록."
             : "I'm Seungkook Jae. I made this page so you know exactly what to expect before you ever step foot in the dealership. No surprises."}
         </p>
       </section>
@@ -486,7 +486,7 @@ export default function FinancingPage() {
       <section className="mb-16">
         <h2 className="mb-2 text-center text-2xl font-bold sm:text-3xl">
           {isKo
-            ? "당신의 걱정별로 정리한 후기"
+            ? "걱정별로 정리한 실제 후기"
             : "Reviews Organized by Your Fear"}
         </h2>
         <p className="mb-10 text-center text-muted-foreground">
@@ -529,7 +529,7 @@ export default function FinancingPage() {
         </h2>
         <p className="mb-10 text-center text-muted-foreground">
           {isKo
-            ? "재승국이 직접 드리는 약속입니다."
+            ? "제승국이 직접 드리는 약속입니다."
             : "Personal commitments from me, Seungkook, to you."}
         </p>
 
@@ -613,7 +613,9 @@ export default function FinancingPage() {
         </div>
 
         <p className="mt-6 text-sm text-muted-foreground">
-          아직 궁금한 점이 있으신가요? 편하게 연락주세요.
+          {isKo
+            ? "아직 궁금한 점이 있으신가요? 편하게 연락주세요."
+            : "Still have questions? Don\u2019t hesitate to reach out."}
         </p>
       </section>
     </div>

@@ -321,7 +321,7 @@ export default function GuidePage() {
                 : "\"I know what it feels like to not understand the paperwork in front of you. I've been there.\""}
             </p>
             <p className="mt-2 text-sm font-medium text-sky-400">
-              — Seungkook Jae {isKo ? "(\uc7ac\uc2b9\uad6d)" : ""}
+              — Seungkook Jae {isKo ? "(\uc81c\uc2b9\uad6d)" : ""}
             </p>
           </div>
         </div>

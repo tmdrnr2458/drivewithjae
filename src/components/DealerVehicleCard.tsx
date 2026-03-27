@@ -103,25 +103,30 @@ export function DealerVehicleCard({ vehicle, features, matchedFeatures }: { vehi
         </p>
 
         {/* Pricing */}
-        <div className="mb-2 space-y-1">
+        <div className="mb-3 space-y-1">
+          <div className="flex items-baseline justify-between gap-2">
+            <span className="text-xl font-bold text-sky-600">
+              {vehicle.salePrice || vehicle.retailPrice || vehicle.msrp || "Call for Price"}
+            </span>
+            {priceNum > 0 && (
+              <span className="text-xs text-muted-foreground whitespace-nowrap">
+                ~${monthlyPayment.toLocaleString()}/mo
+              </span>
+            )}
+          </div>
           {vehicle.msrp && vehicle.salePrice && vehicle.msrp !== vehicle.salePrice && (
             <div className="flex items-center gap-2">
               <span className="text-sm text-muted-foreground line-through">
                 {vehicle.msrp}
               </span>
-              <span className="text-xs font-medium text-red-500">MSRP</span>
+              <span className="text-xs font-medium text-emerald-600">Save {(() => {
+                const msrpNum = parseInt(vehicle.msrp!.replace(/[$,]/g, "")) || 0;
+                const saleNum = parseInt(vehicle.salePrice!.replace(/[$,]/g, "")) || 0;
+                const diff = msrpNum - saleNum;
+                return diff > 0 ? `$${diff.toLocaleString()}` : "";
+              })()}</span>
             </div>
           )}
-          <div className="flex items-center justify-between">
-            <span className="text-lg font-bold text-sky-600">
-              {vehicle.salePrice || vehicle.retailPrice || vehicle.msrp || "Call for Price"}
-            </span>
-            {priceNum > 0 && (
-              <span className="text-xs text-muted-foreground">
-                ~${monthlyPayment.toLocaleString()}/mo
-              </span>
-            )}
-          </div>
         </div>
 
         {/* Discounts & Rebates */}

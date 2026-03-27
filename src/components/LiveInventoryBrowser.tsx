@@ -28,7 +28,7 @@ import {
   SheetFooter,
   SheetClose,
 } from "@/components/ui/sheet";
-import { Loader2, RefreshCw, SlidersHorizontal, X } from "lucide-react";
+import { ArrowUpDown, Loader2, RefreshCw, SlidersHorizontal, X } from "lucide-react";
 
 // ─── Feature cache ─────────────────────────────────────
 
@@ -291,6 +291,17 @@ function countActiveFilters(filters: FilterState): number {
   return count;
 }
 
+// ─── Sort options ───────────────────────────────────────
+
+type SortOption = "newest" | "price_asc" | "price_desc" | "mileage_asc";
+
+const SORT_OPTIONS: { value: SortOption; label: string }[] = [
+  { value: "newest", label: "Newest First" },
+  { value: "price_asc", label: "Price: Low \u2192 High" },
+  { value: "price_desc", label: "Price: High \u2192 Low" },
+  { value: "mileage_asc", label: "Lowest Mileage" },
+];
+
 // ─── Props ─────────────────────────────────────────────
 
 interface LiveInventoryBrowserProps {
@@ -312,6 +323,7 @@ export function LiveInventoryBrowser({ defaultType = "all" }: LiveInventoryBrows
     type: defaultType,
   });
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
+  const [sortBy, setSortBy] = useState<SortOption>("newest");
 
   useEffect(() => {
     fetchInventory();
@@ -419,6 +431,22 @@ export function LiveInventoryBrowser({ defaultType = "all" }: LiveInventoryBrows
       return matchesFilters(v, filters, meta.features, meta.fuel, meta.price, meta.drivetrain);
     });
   }, [vehicles, filters, vehicleMeta]);
+
+  // Sort filtered results
+  const sorted = useMemo(() => {
+    const arr = [...filtered];
+    switch (sortBy) {
+      case "price_asc":
+        return arr.sort((a, b) => (vehicleMeta.get(a.vin)?.price ?? 0) - (vehicleMeta.get(b.vin)?.price ?? 0));
+      case "price_desc":
+        return arr.sort((a, b) => (vehicleMeta.get(b.vin)?.price ?? 0) - (vehicleMeta.get(a.vin)?.price ?? 0));
+      case "mileage_asc":
+        return arr.sort((a, b) => a.mileage - b.mileage);
+      case "newest":
+      default:
+        return arr.sort((a, b) => b.year - a.year || (vehicleMeta.get(b.vin)?.price ?? 0) - (vehicleMeta.get(a.vin)?.price ?? 0));
+    }
+  }, [filtered, sortBy, vehicleMeta]);
 
   const activeFilterCount = countActiveFilters(filters);
   const filterChips = useMemo(() => buildFilterChips(filters), [filters]);
@@ -577,20 +605,36 @@ export function LiveInventoryBrowser({ defaultType = "all" }: LiveInventoryBrows
         </div>
       )}
 
-      {/* Results count */}
-      <div className="mb-4 flex items-center justify-between">
+      {/* Results count + sort */}
+      <div className="mb-4 flex items-center justify-between gap-4">
         <p className="text-sm text-muted-foreground">
           Showing {filtered.length} of {vehicles.length} vehicles
         </p>
-        {activeFilterCount > 0 && (
-          <button
-            onClick={handleClearAll}
-            className="hidden lg:inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <X className="h-3.5 w-3.5" />
-            Clear All Filters
-          </button>
-        )}
+        <div className="flex items-center gap-3">
+          {activeFilterCount > 0 && (
+            <button
+              onClick={handleClearAll}
+              className="hidden lg:inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <X className="h-3.5 w-3.5" />
+              Clear All Filters
+            </button>
+          )}
+          <div className="flex items-center gap-1.5">
+            <ArrowUpDown className="h-3.5 w-3.5 text-muted-foreground hidden sm:block" />
+            <select
+              value={sortBy}
+              onChange={(e) => setSortBy(e.target.value as SortOption)}
+              className="rounded-md border border-input bg-background px-2.5 py-1.5 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-sky-500"
+            >
+              {SORT_OPTIONS.map((opt) => (
+                <option key={opt.value} value={opt.value}>
+                  {opt.label}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
       </div>
 
       {/* Desktop: sidebar + grid layout */}
@@ -604,9 +648,9 @@ export function LiveInventoryBrowser({ defaultType = "all" }: LiveInventoryBrows
 
         {/* Vehicle grid */}
         <div className="flex-1 min-w-0">
-          {filtered.length > 0 ? (
+          {sorted.length > 0 ? (
             <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3">
-              {filtered.map((vehicle) => {
+              {sorted.map((vehicle) => {
                 const meta = vehicleMeta.get(vehicle.vin);
                 return (
                   <DealerVehicleCard

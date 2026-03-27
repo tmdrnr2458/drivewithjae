@@ -165,7 +165,7 @@ export function LifestyleQuiz() {
               const quizMatch = results.quizVehicles.find((v) => v.id === vehicle.vin);
               const features = quizMatch?.lifestyleTags.features;
               return (
-                <DealerVehicleCard key={vehicle.vin} vehicle={vehicle} features={features} />
+                <DealerVehicleCard key={vehicle.vin} vehicle={vehicle} features={features} matchedFeatures={selectedFeatures} />
               );
             })}
           </div>

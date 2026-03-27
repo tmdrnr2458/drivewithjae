@@ -34,7 +34,7 @@ const FEATURE_LABELS: Record<string, string> = {
   ventilated_seats: "Ventilated Seats",
 };
 
-export function DealerVehicleCard({ vehicle, features }: { vehicle: DealerVehicle; features?: string[] }) {
+export function DealerVehicleCard({ vehicle, features, matchedFeatures }: { vehicle: DealerVehicle; features?: string[]; matchedFeatures?: string[] }) {
   const hasImages = vehicle.images.length > 0;
   const mainImage = hasImages ? vehicle.images[0] : null;
 
@@ -162,20 +162,37 @@ export function DealerVehicleCard({ vehicle, features }: { vehicle: DealerVehicl
         )}
 
         {/* Features */}
-        {features && features.length > 0 && (
-          <div className="mb-2 flex flex-wrap gap-1">
-            {features.slice(0, 6).map((tag) => (
-              <Badge key={tag} variant="outline" className="text-xs">
-                {FEATURE_LABELS[tag] || tag.replace(/_/g, " ")}
-              </Badge>
-            ))}
-            {features.length > 6 && (
-              <Badge variant="outline" className="text-xs text-muted-foreground">
-                +{features.length - 6} more
-              </Badge>
-            )}
-          </div>
-        )}
+        {features && features.length > 0 && (() => {
+          const matchedSet = new Set(matchedFeatures ?? []);
+          // Sort so matched features appear first
+          const sorted = [...features].sort((a, b) => {
+            const aMatch = matchedSet.has(a) ? 0 : 1;
+            const bMatch = matchedSet.has(b) ? 0 : 1;
+            return aMatch - bMatch;
+          });
+          return (
+            <div className="mb-2 flex flex-wrap gap-1">
+              {sorted.slice(0, 6).map((tag) => (
+                <Badge
+                  key={tag}
+                  variant={matchedSet.has(tag) ? "default" : "outline"}
+                  className={
+                    matchedSet.has(tag)
+                      ? "bg-sky-500 text-white text-xs hover:bg-sky-500"
+                      : "text-xs"
+                  }
+                >
+                  {FEATURE_LABELS[tag] || tag.replace(/_/g, " ")}
+                </Badge>
+              ))}
+              {sorted.length > 6 && (
+                <Badge variant="outline" className="text-xs text-muted-foreground">
+                  +{sorted.length - 6} more
+                </Badge>
+              )}
+            </div>
+          );
+        })()}
 
         {/* Stock # and VIN */}
         <p className="mb-3 text-xs text-muted-foreground">

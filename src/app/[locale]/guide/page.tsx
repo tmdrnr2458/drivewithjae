@@ -503,9 +503,16 @@ export default function GuidePage() {
               ? "한국어든 영어든 편하게 물어보세요"
               : "Ask in Korean or English"}
           </p>
-          <p className="mb-8 text-sky-400">
-            카카오톡으로도 편하게 연락 주세요
-          </p>
+          {isKo && (
+            <a
+              href="https://open.kakao.com/o/sYfHRMhi"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mb-8 inline-flex items-center gap-2 text-sky-400 hover:text-sky-300 transition-colors"
+            >
+              카카오톡으로도 편하게 연락 주세요 →
+            </a>
+          )}
           <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
             <a
               href="tel:984-242-1715"

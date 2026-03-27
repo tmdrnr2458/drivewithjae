@@ -10,7 +10,7 @@ export function ContactButtons() {
     <div className="fixed bottom-4 right-4 z-50 flex flex-col gap-2">
       {locale === "ko" && (
         <a
-          href="https://open.kakao.com/o/sXXXXXX"
+          href="https://open.kakao.com/o/sYfHRMhi"
           target="_blank"
           rel="noopener noreferrer"
           className="flex h-12 w-12 items-center justify-center rounded-full bg-[#FEE500] text-[#3C1E1E] shadow-lg transition-transform hover:scale-110"

@@ -69,39 +69,39 @@ const steps = {
   ko: [
     {
       icon: CreditCard,
-      title: "원하는 것을 파악하기",
+      title: "먼저 이것부터 정하세요",
       content:
-        "먼저 결정하세요: 전액 현금으로 살 건지, 월 할부로 할 건지? 한국 분들 중 많은 분이 현금 일시불을 선호하시는데 아주 좋은 방법입니다! 할부를 원하시면 크레딧 점수(300~850)가 이자율을 결정합니다. 크레딧 기록이 없으세요? 시큐어드 신용카드를 만들어 매달 전액 결제하면 6개월 안에 점수가 쌓이기 시작합니다.",
+        "현금 일시불로 살 건지, 할부로 할 건지 먼저 정하세요. 한국 분들은 현금으로 한 번에 사시는 분이 많은데, 아주 좋은 방법이에요! 할부를 생각하시면 크레딧 점수(300~850)가 이자율을 정해요. 크레딧이 아직 없으세요? 시큐어드 카드 만들어서 매달 갚으면 6개월이면 점수가 생겨요.",
     },
     {
       icon: DollarSign,
-      title: "실제 예산 정하기",
+      title: "진짜 예산 이렇게 세우세요",
       content:
-        "할부 시: 금융 $1,000당 월 약 $20. $25,000 차 ≈ 월 $500. 다운페이먼트를 넣으면 월 납입금이 줄어요 — $25K 차에 $5,000 다운 → $20K 금융 ≈ 월 $400. 보험료($100~$300/월), 기름값($150~$250/월), NC 판매세(3%)도 잊지 마세요. 현금 구매 시: 차 가격 + 세금 + 수수료 = 최종 가격. 어떤 방식이든 총 비용으로 예산을 세우세요.",
+        "할부 시: $1,000 빌리면 월 약 $20이에요. $25,000 차 = 월 $500 정도. 다운을 넣으면 줄어들어요 — $25K 차에 $5,000 다운하면 $20K만 빌리니까 월 $400. 보험료($100~$300/월), 기름값($150~$250/월), NC 세금(3%)도 꼭 넣어서 계산하세요. 현금이면: 차값 + 세금 + 수수료 = 총 가격. 이걸 모르면 나중에 당황해요.",
     },
     {
       icon: Car,
-      title: "\uc2e0\ucc28 vs \uc911\uace0 vs CPO \uc120\ud0dd",
+      title: "신차 vs 중고 vs CPO, 뭐가 나을까?",
       content:
-        "\uc2e0\ucc28: \ud480 \uc6cc\ub7f0\ud2f0, \ucd5c\uc2e0 \uae30\ub2a5, \ub192\uc740 \uac00\uaca9. \uc911\uace0: \uc800\ub834\ud558\uc9c0\ub9cc \ucc28\ub7c9 \uc774\ub825 \ud655\uc778 \ud544\uc218(Carfax). CPO(\uc778\uc99d \uc911\uace0\ucc28): \uc81c\uc870\uc0ac \uc6cc\ub7f0\ud2f0\uac00 \ud3ec\ud568\ub41c \uc911\uace0\ucc28 \u2014 \uc7a5\uc810\ub9cc \ubaa8\uc740 \uc120\ud0dd. \ucc38\uace0\ub85c Kia\ub294 \uc2e0\ucc28\uc5d0 10\ub144/10\ub9cc \ub9c8\uc77c \ud30c\uc6cc\ud2b8\ub808\uc778 \uc6cc\ub7f0\ud2f0\ub97c \uc81c\uacf5\ud569\ub2c8\ub2e4.",
+        "신차: 워런티 풀, 최신 기능, 대신 비싸요. 중고: 저렴하지만 Carfax로 이력 꼭 확인하세요. CPO(인증 중고차): 제조사 워런티가 포함된 중고차라서 장점만 모았어요. 참고로 Kia는 신차에 10년/10만 마일 파워트레인 워런티를 줘요. 이거 진짜 좋아요.",
     },
     {
       icon: ClipboardCheck,
-      title: "\uc2dc\uc2b9\ud558\uae30",
+      title: "시승은 무조건 해보세요",
       content:
-        "\uc2dc\uc2b9\uc740 100% \ubb34\ub8cc\uc774\uace0 \uc758\ubb34\uac00 \uc5c6\uc2b5\ub2c8\ub2e4. \uace0\uc18d\ub3c4\ub85c\uc640 \uc8fc\ucc28\uc7a5 \ubaa8\ub450\uc5d0\uc11c \uc6b4\uc804\ud574 \ubcf4\uc138\uc694. \uac00\uc871\ub3c4 \ub370\ub824\uc624\uc138\uc694 \u2014 \uce74\uc2dc\ud2b8\uac00 \ub9de\ub294\uc9c0, \ubaa8\ub450 \ud3b8\ud55c\uc9c0 \ud655\uc778\ud558\uc138\uc694. \ucc9c\ucc9c\ud788 \ud558\uc138\uc694. \uc88b\uc740 \uc138\uc77c\uc988\ub9e8\uc740 \uc808\ub300 \uc11c\ub450\ub974\uac8c \ud558\uc9c0 \uc54a\uc2b5\ub2c8\ub2e4.",
+        "시승은 100% 무료고 사야 할 의무도 없어요. 고속도로랑 주차장 둘 다 돌아보세요. 가족도 같이 오세요 — 카시트 들어가는지, 다 편한지 직접 확인해야 해요. 천천히 하세요. 좋은 세일즈맨은 절대 서두르지 않아요.",
     },
     {
       icon: Handshake,
-      title: "가격 협상하기",
+      title: "가격, 깎을 수 있어요",
       content:
-        "많은 딜러들이 가격을 올려놓고 협상을 기대하지만, Fred Anderson에서는 온라인에 최적의 가격을 미리 보여드립니다. 중고차의 경우 대부분 가격이 정해져 있지만, 차량에 따라 세일즈 매니저가 약간의 할인을 해줄 수 있는 여지가 있을 수 있어요. 편하게 물어보세요 — 최악의 경우 안 된다고 하는 거니까요.",
+        "많은 딜러가 가격을 높여놓고 깎아주는 척하는데, Fred Anderson에서는 온라인에 최선 가격을 미리 올려놔요. 중고차는 가격이 대부분 정해져 있지만, 차에 따라 좀 빼줄 수 있는 여지가 있어요. 그냥 물어보세요 — 안 되면 안 된다고 하는 거니까 손해 볼 건 없어요.",
     },
     {
       icon: FileText,
-      title: "\uc11c\ub958 \uc791\uc131 & \ucd9c\uace0",
+      title: "서류 싸인하고 출발!",
       content:
-        "F&I(\ud30c\uc774\ub09c\uc2a4 & \ubcf4\ud5d8) \uc0ac\ubb34\uc2e4\uc5d0\uc11c \ucd94\uac00 \uc0c1\ud488\uc744 \uad8c\uc720\ud569\ub2c8\ub2e4: \uc5f0\uc7a5 \uc6cc\ub7f0\ud2f0, \ud398\uc778\ud2b8 \ubcf4\ud638, \uac2d \ubcf4\ud5d8 \ub4f1. \ub2e4\uc6b4\ud398\uc774\uba3c\ud2b8\uac00 \uc801\uc740 \uacbd\uc6b0 \uac2d \ubcf4\ud5d8\uc740 \uac00\uce58\uac00 \uc788\uc2b5\ub2c8\ub2e4. \ud398\uc778\ud2b8 \ubcf4\ud638\ub098 \uc9c1\ubb3c \ucf54\ud305? \ub300\ubd80\ubd84 \ud544\uc694 \uc5c6\uc2b5\ub2c8\ub2e4. \uc11c\uba85 \uc804\uc5d0 \ubaa8\ub4e0 \uac83\uc744 \uaf3c\uaf3c\ud788 \uc77d\uc73c\uc138\uc694.",
+        "F&I(파이낸스 사무실)에서 추가 상품을 권유해요: 연장 워런티, 페인트 보호, 갭 보험 같은 거요. 다운페이먼트가 적으면 갭 보험은 들어볼 만해요. 페인트 보호나 직물 코팅? 대부분 필요 없어요. 서명하기 전에 모든 걸 꼼꼼히 읽으세요. 모르는 거 있으면 저한테 물어보세요.",
     },
   ],
 };
@@ -135,28 +135,28 @@ const traps = {
   ],
   ko: [
     {
-      title: "\uc694\uc694 \ud30c\uc774\ub09c\uc2f1",
-      what: "\ucc28\ub97c \ud0c0\uace0 \uc9d1\uc5d0 \uac14\ub294\ub370, \ub51c\ub7ec\uac00 \uc804\ud654\ud574\uc11c \ud30c\uc774\ub09c\uc2f1\uc774 \"\uc548 \ub410\ub2e4\"\uba70 \ub354 \ub192\uc740 \uc774\uc790\uc728\ub85c \uc0c8 \uacc4\uc57d\uc744 \ud558\ub77c\uace0 \ud569\ub2c8\ub2e4.",
+      title: "요요 파이낸싱",
+      what: "차 타고 집에 갔는데, 딜러가 전화해서 파이낸싱이 '안 됐다'면서 더 높은 이자로 다시 사인하라고 해요.",
       protect:
-        "\ud30c\uc774\ub09c\uc2f1\uc774 100% \uc11c\uba74\uc73c\ub85c \ud655\uc778\ub420 \ub54c\uae4c\uc9c0 \ucc28\ub97c \uac00\uc838\uac00\uc9c0 \ub9c8\uc138\uc694. \ub2e4\uc2dc \uc804\ud654\uac00 \uc624\uba74, \ucc28\ub97c \ubc18\ub0a9\ud558\uace0 \ub3c8\uc744 \ub3cc\ub824\ubc1b\uc744 \ubc95\uc801 \uad8c\ub9ac\uac00 \uc788\uc2b5\ub2c8\ub2e4.",
+        "파이낸싱이 서면으로 100% 확인될 때까지 차를 가져가지 마세요. 나중에 전화 오면 차 반납하고 돈 돌려받을 법적 권리가 있어요.",
     },
     {
-      title: "\ubbf8\ub07c \uc0c1\uc220 (Bait-and-Switch)",
-      what: "\uc628\ub77c\uc778 \uac00\uaca9\uc740 \uc88b\uc544 \ubcf4\uc774\ub294\ub370, \ub3c4\ucc29\ud558\uba74 \"\uc2dc\uc7a5 \uc870\uc815\" \ub610\ub294 \"\ud544\uc218 \ud328\ud0a4\uc9c0\" \ub54c\ubb38\uc5d0 \uac00\uaca9\uc774 \uac11\uc790\uae30 \uc62c\ub77c\uac11\ub2c8\ub2e4.",
+      title: "미끼 상술 (Bait-and-Switch)",
+      what: "온라인 가격은 엄청 좋은데, 막상 가면 '시장 조정'이나 '필수 패키지' 때문에 가격이 확 올라요.",
       protect:
-        "\uac00\uae30 \uc804\uc5d0 \uc628\ub77c\uc778 \uac00\uaca9\uc744 \uc2a4\ud06c\ub9b0\uc0f7 \ud558\uc138\uc694. \ubb38\uc790\ub098 \uc774\uba54\uc77c\ub85c \uac00\uaca9\uc744 \ud655\uc778\ubc1b\uc73c\uc138\uc694. \uac00\uaca9\uc774 \ubc14\ub00c\uba74, \ub5a0\ub098\uc138\uc694.",
+        "가기 전에 온라인 가격 스크린샷 찍어두세요. 문자나 이메일로 가격 확인받으세요. 가격이 바뀌면? 그냥 나오세요.",
     },
     {
-      title: "\ubd88\ud544\uc694\ud55c \ucd94\uac00 \uc0c1\ud488",
-      what: "\ud398\uc778\ud2b8 \ubcf4\ud638, \uc9c1\ubb3c \ucf54\ud305, VIN \uac01\uc778, \uc9c8\uc18c \ud0c0\uc774\uc5b4 \u2014 \ub9c8\uc9c4\uc774 \ub192\uace0 \ub300\ubd80\ubd84 \uac00\uce58\uac00 \uc5c6\ub294 \uc0c1\ud488\ub4e4\uc785\ub2c8\ub2e4.",
+      title: "쓸데없는 추가 상품",
+      what: "페인트 보호, 직물 코팅, VIN 각인, 질소 타이어 — 딜러 마진은 높고 대부분 필요 없는 것들이에요.",
       protect:
-        "\ubaa8\ub4e0 \ucd94\uac00 \uc0c1\ud488\uc740 \uac70\uc808\ud560 \uc218 \uc788\uc2b5\ub2c8\ub2e4. \ucd94\uac00 \uc5c6\ub294 \uac00\uaca9\uc744 \uc694\uccad\ud558\uc138\uc694. \uac2d \ubcf4\ud5d8\uc774 \ud544\uc694\ud558\uba74 \uc9c1\uc811 \ube44\uad50\ud574 \ubcf4\uc138\uc694 \u2014 \ubcf4\ud5d8\ud68c\uc0ac\uac00 \ub354 \uc800\ub834\ud560 \uc218 \uc788\uc2b5\ub2c8\ub2e4.",
+        "추가 상품은 다 거절할 수 있어요. '추가 없이 얼마예요?' 하고 물어보세요. 갭 보험이 필요하면 직접 비교해보세요 — 보험회사가 더 쌀 수 있어요.",
     },
     {
-      title: "\"\ub9e4\ub2c8\uc800\uc640 \uc598\uae30\ud574 \ubcfc\uac8c\uc694\"",
-      what: "\uae30\ub2e4\ub9ac\uac8c \ud558\uace0 \uc2ec\ub9ac\uc801\uc73c\ub85c \ubb36\uc5b4\ub450\ub824\ub294 \uc555\ubc15 \uc804\uc220\uc785\ub2c8\ub2e4. \uc138\uc77c\uc988\ub9e8\uc774 \"\uc88b\uc740 \ub51c\uc744 \uc704\ud574 \uc2f8\uc6cc\uc8fc\ub294\" \ucc99\ud558\uc9c0\ub9cc, \uac00\uaca9\uc740 \uc774\ubbf8 \uc815\ud574\uc838 \uc788\uc5c8\uc2b5\ub2c8\ub2e4.",
+      title: "'매니저한테 물어볼게요'",
+      what: "기다리게 해서 심리적으로 묶어두는 작전이에요. '좋은 딜 받아왔다'고 하지만, 사실 가격은 이미 정해져 있었어요.",
       protect:
-        "\uadf8 \ud37c\ud3ec\uba3c\uc2a4\uc5d0 \uc555\ubc15\uac10\uc744 \ub290\ub07c\uc9c0 \ub9c8\uc138\uc694. \uc608\uc0b0\uc744 \uc54c\uace0, \uacf5\uc815 \uc2dc\uc7a5 \uac00\uaca9\uc744 \uc54c\uace0(KBB\ub098 Edmunds \ucc38\uace0), \uc790\uc2e0\uc758 \uc22b\uc790\ub97c \uc9c0\ud0a4\uc138\uc694. \ub5a0\ub098\ub3c4 \ub429\ub2c8\ub2e4.",
+        "그 퍼포먼스에 넘어가지 마세요. 내 예산 알고, 시장 가격 알고(KBB나 Edmunds 검색), 내 숫자를 지키세요. 그냥 나와도 돼요.",
     },
   ],
 };
@@ -181,19 +181,19 @@ const checklist = {
   },
   ko: {
     everyone: [
-      "\uc720\ud6a8\ud55c \uc6b4\uc804\uba74\ud5c8\uc99d \ub610\ub294 \uc5ec\uad8c",
-      "\uc18c\ub4dd \uc99d\uba85 (\ucd5c\uadfc \uae09\uc5ec \uba85\uc138\uc11c 2\uc7a5)",
-      "\uac70\uc8fc \uc99d\uba85 (\uacf5\uacfc\uae08 \uace0\uc9c0\uc11c \ub610\ub294 \uc784\ub300\ucc28 \uacc4\uc57d\uc11c)",
-      "\ubcf4\ud5d8 \uc815\ubcf4 (\ub610\ub294 \uacac\uc801 \ubc1b\uc744 \uc900\ube44)",
-      "\ud2b8\ub808\uc774\ub4dc\uc778 \ucc28\ub7c9 \ud0c0\uc774\ud2c0 (\ud574\ub2f9\ub418\ub294 \uacbd\uc6b0)",
-      "\uacc4\uc57d\uae08 (\uac1c\uc778 \uc218\ud45c \ub610\ub294 \uacc4\uc88c\uc774\uccb4 \uac00\ub2a5)",
+      "운전면허증 또는 여권",
+      "소득 증명 (최근 급여 명세서 2장)",
+      "거주 증명 (공과금 고지서나 임대차 계약서)",
+      "보험 정보 (없으면 견적 받을 준비)",
+      "트레이드인 차량 타이틀 (해당되면)",
+      "다운페이먼트 (수표나 계좌이체 OK)",
     ],
     visa: [
-      "\uc720\ud6a8\ud55c \ube44\uc790\uac00 \uc788\ub294 \uc5ec\uad8c",
-      "I-94 \uc785\ucd9c\uad6d \uae30\ub85d",
-      "SSN \ub610\ub294 ITIN (\uac1c\uc778 \ub0a9\uc138\uc790 \uc2dd\ubcc4\ubc88\ud638)",
-      "\ud68c\uc0ac \uc7ac\uc9c1 \uc99d\uba85\uc11c",
-      "\ubbf8\uad6d \uc8fc\uc18c \uc99d\uba85",
+      "유효한 비자가 있는 여권",
+      "I-94 입출국 기록",
+      "SSN 또는 ITIN (개인 납세자 번호)",
+      "회사 재직 증명서",
+      "미국 주소 증명",
     ],
   },
 };
@@ -231,32 +231,32 @@ const faqs = {
   ],
   ko: [
     {
-      q: "F-1 \ud559\uc0dd\ube44\uc790\ub85c \ucc28\ub97c \uc0b4 \uc218 \uc788\ub098\uc694?",
-      a: "\ub124! F-1 \ube44\uc790\ub85c \ucc28\ub97c \uc0b4 \uc218 \uc788\uc2b5\ub2c8\ub2e4. SSN(\uad50\ub0b4 \uadfc\ubb34 \uc2dc) \ub610\ub294 ITIN\uc774 \ud544\uc694\ud569\ub2c8\ub2e4. \ud559\uc0dd\uacfc \uc790\uc8fc \uac70\ub798\ud558\ub294 \ub51c\ub7ec\ub4e4\uc740 \uc808\ucc28\ub97c \uc798 \uc54c\uace0 \uc788\uc5b4\uc694. \uc81c\uac00 \ub2e8\uacc4\ubcc4\ub85c \uc548\ub0b4\ud574 \ub4dc\ub9ac\uaca0\uc2b5\ub2c8\ub2e4.",
+      q: "F-1 학생비자로 차를 살 수 있나요?",
+      a: "네! F-1 비자로 차 살 수 있어요. SSN(캠퍼스 알바 있으면) 아니면 ITIN이 필요해요. 학생 고객이 많은 딜러는 절차를 잘 알고 있어요. 제가 하나하나 알려드릴게요.",
     },
     {
-      q: "H-1B \ucde8\uc5c5\ube44\uc790\ub85c \ucc28\ub97c \uc0b4 \uc218 \uc788\ub098\uc694?",
-      a: "\ubb3c\ub860\uc774\uc8e0. H-1B\uac00 \uc788\uc73c\uba74 \ub300\ubd80\ubd84\uc758 \uc740\ud589\uc5d0\uc11c \ud30c\uc774\ub09c\uc2f1\uc774 \uac00\ub2a5\ud569\ub2c8\ub2e4. \uc7ac\uc9c1 \uc99d\uba85\uc11c, \ucd5c\uadfc \uae09\uc5ec \uba85\uc138\uc11c, \uc8fc\uc18c \uc99d\uba85\uc744 \uc900\ube44\ud574 \uc624\uc138\uc694. \uc548\uc815\uc801\uc778 \uace0\uc6a9 \uc0c1\ud0dc\uac00 \ud30c\uc774\ub09c\uc2f1\uc744 \uc218\uc6d4\ud558\uac8c \ub9cc\ub4e4\uc5b4\uc90d\ub2c8\ub2e4.",
+      q: "H-1B 취업비자로 차를 살 수 있나요?",
+      a: "물론이죠! H-1B 있으면 대부분 은행에서 파이낸싱이 돼요. 재직 증명서, 최근 급여 명세서, 주소 증명 가져오세요. 안정적인 직장이 있으면 훨씬 수월해요.",
     },
     {
-      q: "\uc18c\uc15c\uc2dc\ud050\ub9ac\ud2f0 \ubc88\ud638(SSN)\uac00 \uaf2d \ud544\uc694\ud55c\uac00\uc694?",
-      a: "\ubc18\ub4dc\uc2dc \ud544\uc694\ud558\uc9c4 \uc54a\uc2b5\ub2c8\ub2e4. ITIN(\uac1c\uc778 \ub0a9\uc138\uc790 \uc2dd\ubcc4\ubc88\ud638)\uc73c\ub85c\ub3c4 \ub429\ub2c8\ub2e4. IRS\uc5d0\uc11c ITIN\uc744 \uc2e0\uccad\ud560 \uc218 \uc788\uc5b4\uc694. \uc77c\ubd80 \ud06c\ub808\ub527 \uc720\ub2c8\uc628\uc740 ITIN \ubcf4\uc720\uc790\uc5d0\uac8c\ub3c4 \uc790\ub3d9\ucc28 \ub860\uc744 \uc81c\uacf5\ud569\ub2c8\ub2e4.",
+      q: "SSN이 꼭 있어야 하나요?",
+      a: "아니에요. ITIN(개인 납세자 식별번호)으로도 돼요. IRS에서 신청할 수 있어요. 일부 크레딧 유니온은 ITIN으로도 자동차 론을 해줘요.",
     },
     {
-      q: "\ud55c\uad6d\uc5d0 \uc788\ub294 \uac00\uc871\uc774 \ubcf4\uc99d\uc778\uc774 \ub420 \uc218 \uc788\ub098\uc694?",
-      a: "\uc77c\ubc18\uc801\uc73c\ub85c \ubcf4\uc99d\uc778\uc740 \ubbf8\uad6d \uac70\uc8fc\uc790\uc5ec\uc57c \ud558\uace0 \ubbf8\uad6d \ud06c\ub808\ub527 \uae30\ub85d\uc774 \ud544\uc694\ud569\ub2c8\ub2e4. \ud558\uc9c0\ub9cc \ud070 \ub2e4\uc6b4\ud398\uc774\uba3c\ud2b8\ub97c \ud558\uac70\ub098 \ud2b9\uc815 \ub80c\ub354\ub97c \uc774\uc6a9\ud558\uba74 \ubc29\ubc95\uc774 \uc788\uc2b5\ub2c8\ub2e4. \uc81c\uac00 \uc635\uc158\uc744 \ucc3e\uc544\ub4dc\ub9ac\uaca0\uc2b5\ub2c8\ub2e4.",
+      q: "한국에 있는 가족이 보증인이 될 수 있나요?",
+      a: "보통은 보증인이 미국에 살면서 미국 크레딧이 있어야 해요. 하지만 다운을 많이 넣거나 특정 렌더를 이용하면 방법이 있어요. 같이 방법 찾아봐요.",
     },
     {
-      q: "2\ub144 \ud6c4 \ud55c\uad6d\uc5d0 \ub3cc\uc544\uac00\ub294\ub370 \u2014 \ub9ac\uc2a4\uac00 \ub098\uc744\uae4c\uc694, \uad6c\ub9e4\uac00 \ub098\uc744\uae4c\uc694?",
-      a: "2~3\ub144 \ub9ac\uc2a4\uac00 \ub531 \ub9de\uc744 \uc218 \uc788\uc2b5\ub2c8\ub2e4. \ub05d\ub098\uba74 \ucc28\ub97c \ubc18\ub0a9\ud558\uba74 \ub418\ub2c8 \ud310\ub9e4 \uac71\uc815\uc774 \uc5c6\uc5b4\uc694. \ub2e4\ub9cc \uc8fc\ud589\uac70\ub9ac \uc81c\ud55c(\ubcf4\ud1b5 \uc5f0 10,000~12,000\ub9c8\uc77c)\uc744 \ud655\uc778\ud558\uc138\uc694.",
+      q: "2년 후 한국 돌아가는데 — 리스가 나을까요, 구매가 나을까요?",
+      a: "2~3년 리스가 딱 맞을 수 있어요. 끝나면 차 반납하면 되니까 팔 걱정이 없어요. 다만 주행거리 제한(보통 연 10,000~12,000마일)은 꼭 확인하세요.",
     },
     {
-      q: "\ud55c\uad6d \uc6b4\uc804\uba74\ud5c8\uc99d\uc744 \uc0ac\uc6a9\ud560 \uc218 \uc788\ub098\uc694?",
-      a: "\ud55c\uad6d \uba74\ud5c8\ub85c \uc77c\uc2dc\uc801\uc73c\ub85c \uc6b4\uc804\ud560 \uc218 \uc788\uc9c0\ub9cc, \uac00\ub2a5\ud55c \ube68\ub9ac NC \uc6b4\uc804\uba74\ud5c8\ub97c \ucde8\ub4dd\ud558\uc138\uc694. \ub300\ubd80\ubd84\uc758 \ubcf4\ud5d8\ud68c\uc0ac\uac00 \ubbf8\uad6d \uba74\ud5c8\ub97c \uc694\uad6c\ud558\uace0, \ubaa8\ub4e0 \uac83\uc774 \uc218\uc6d4\ud574\uc9d1\ub2c8\ub2e4. NC DMV \uc808\ucc28\ub294 \uac04\ub2e8\ud569\ub2c8\ub2e4.",
+      q: "한국 운전면허증을 쓸 수 있나요?",
+      a: "일시적으로는 쓸 수 있지만, 빨리 NC 면허를 따는 게 좋아요. 보험회사 대부분이 미국 면허를 원하고, 있으면 모든 게 편해져요. NC DMV 시험은 생각보다 간단해요.",
     },
     {
-      q: "\uc601\uc5b4\uac00 \ubd80\uc871\ud574\uc11c \uc11c\ub958 \uc791\uc5c5\uc774 \uac71\uc815\ub418\ub294\ub370\uc694?",
-      a: "\ubc14\ub85c \uadf8\ub798\uc11c \uc81c\uac00 \uc5ec\uae30 \uc788\ub294 \uac81\ub2c8\ub2e4. \uc11c\uba85\ud558\ub294 \ubaa8\ub4e0 \uc11c\ub958\ub97c \ud55c\uad6d\uc5b4\ub85c \uc124\uba85\ud574 \ub4dc\ub9bd\ub2c8\ub2e4. \uc644\uc804\ud788 \uc774\ud574\ud558\uc9c0 \ubabb\ud558\ub294 \uac83\uc5d0 \uc11c\uba85\ud558\ub294 \uc77c\uc740 \uc5c6\uc5b4\uc57c \ud569\ub2c8\ub2e4.",
+      q: "영어가 부족해서 서류가 걱정돼요",
+      a: "바로 그래서 제가 여기 있는 거예요. 사인하는 모든 서류를 한국어로 설명해 드려요. 이해 못 하는 서류에 사인하는 일은 없어야 해요.",
     },
   ],
 };
@@ -317,7 +317,7 @@ export default function GuidePage() {
           <div className="mx-auto max-w-2xl rounded-xl border border-sky-500/20 bg-sky-500/5 p-6">
             <p className="italic text-slate-300">
               {isKo
-                ? "\"\uc11c\ub958\ub97c \uc774\ud574\ud560 \uc218 \uc5c6\ub294 \uadf8 \ub290\ub08c, \uc800\ub3c4 \uc54c\uc544\uc694. \uc800\ub3c4 \uacaa\uc5c8\uc73c\ub2c8\uae4c\uc694.\""
+                ? "\"서류 앞에서 뭔 말인지 모르는 그 느낌, 저도 알아요. 저도 겪었으니까요.\""
                 : "\"I know what it feels like to not understand the paperwork in front of you. I've been there.\""}
             </p>
             <p className="mt-2 text-sm font-medium text-sky-400">
@@ -337,7 +337,7 @@ export default function GuidePage() {
             </Badge>
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
               {isKo
-                ? "\ubbf8\uad6d\uc5d0\uc11c \ucc28 \uc0ac\ub294 7\ub2e8\uacc4"
+                ? "미국에서 차 사는 법, 단계별로 알려드릴게요"
                 : "7 Steps to Buying a Car in the US"}
             </h2>
           </div>
@@ -375,10 +375,10 @@ export default function GuidePage() {
           <div className="mb-12 text-center">
             <Badge className="mb-3 border-amber-500/30 bg-amber-100 text-amber-700">
               <CircleAlert className="mr-1.5 h-3.5 w-3.5" />
-              {isKo ? "\uc8fc\uc758\ud558\uc138\uc694" : "Watch Out"}
+              {isKo ? "이거 조심하세요" : "Watch Out"}
             </Badge>
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-              {isKo ? "\ud53c\ud574\uc57c \ud560 \ud754\ud55c \ud568\uc815\ub4e4" : "Common Traps to Avoid"}
+              {isKo ? "이것만 알면 안 당해요" : "Common Traps to Avoid"}
             </h2>
           </div>
           <div className="grid gap-6 sm:grid-cols-2">
@@ -396,13 +396,13 @@ export default function GuidePage() {
                 <CardContent className="-mt-2 space-y-3">
                   <div>
                     <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                      {isKo ? "\ubb34\uc5c7\uc778\uac00?" : "What is it?"}
+                      {isKo ? "뭔데요?" : "What is it?"}
                     </p>
                     <p className="text-sm text-muted-foreground">{trap.what}</p>
                   </div>
                   <div>
                     <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-emerald-600">
-                      {isKo ? "\uc5b4\ub5bb\uac8c \ubcf4\ud638\ud558\ub098?" : "How to protect yourself"}
+                      {isKo ? "이렇게 대처하세요" : "How to protect yourself"}
                     </p>
                     <p className="text-sm font-medium text-foreground">
                       {trap.protect}
@@ -421,10 +421,10 @@ export default function GuidePage() {
           <div className="mb-12 text-center">
             <Badge className="mb-3 border-sky-500/30 bg-sky-100 text-sky-700">
               <CheckSquare className="mr-1.5 h-3.5 w-3.5" />
-              {isKo ? "\uc900\ube44\ubb3c \uccb4\ud06c\ub9ac\uc2a4\ud2b8" : "Checklist"}
+              {isKo ? "준비물 체크" : "Checklist"}
             </Badge>
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-              {isKo ? "\ub51c\ub7ec \ubc29\ubb38 \uc2dc \uc900\ube44\ubb3c" : "What to Bring to the Dealer"}
+              {isKo ? "딜러 갈 때 이거 챙기세요" : "What to Bring to the Dealer"}
             </h2>
           </div>
           <div className="grid gap-6 lg:grid-cols-2">
@@ -432,7 +432,7 @@ export default function GuidePage() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Shield className="h-5 w-5 text-sky-500" />
-                  {isKo ? "\ubaa8\ub4e0 \ubd84" : "Everyone"}
+                  {isKo ? "누구나 필요한 것" : "Everyone"}
                 </CardTitle>
               </CardHeader>
               <CardContent className="-mt-2">
@@ -450,7 +450,7 @@ export default function GuidePage() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Globe className="h-5 w-5 text-sky-500" />
-                  {isKo ? "\ube44\uc790 \uc18c\uc9c0\uc790 \ucd94\uac00 \uc11c\ub958" : "For Visa Holders"}
+                  {isKo ? "비자 소지자 추가 서류" : "For Visa Holders"}
                 </CardTitle>
               </CardHeader>
               <CardContent className="-mt-2">
@@ -474,11 +474,11 @@ export default function GuidePage() {
           <div className="mb-12 text-center">
             <Badge className="mb-3 border-sky-500/30 bg-sky-100 text-sky-700">
               <HelpCircle className="mr-1.5 h-3.5 w-3.5" />
-              {isKo ? "\uc790\uc8fc \ubb3b\ub294 \uc9c8\ubb38" : "FAQ"}
+              {isKo ? "자주 묻는 질문" : "FAQ"}
             </Badge>
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
               {isKo
-                ? "\uc678\uad6d\uc778 \uad6c\ub9e4\uc790 FAQ"
+                ? "처음 사시는 분들이 제일 많이 물어보는 것들"
                 : "FAQ for International Buyers"}
             </h2>
           </div>
@@ -495,16 +495,16 @@ export default function GuidePage() {
         <div className="mx-auto max-w-2xl px-4 text-center">
           <h2 className="mb-3 text-3xl font-bold tracking-tight sm:text-4xl">
             {isKo
-              ? "\uad81\uae08\ud55c \uc810\uc774 \uc788\uc73c\uc2e0\uac00\uc694?"
+              ? "더 궁금한 거 있으세요?"
               : "Have Questions?"}
           </h2>
           <p className="mb-2 text-lg text-slate-300">
             {isKo
-              ? "\ud55c\uad6d\uc5b4 \ub610\ub294 \uc601\uc5b4\ub85c \ubb3c\uc5b4\ubcf4\uc138\uc694"
+              ? "한국어든 영어든 편하게 물어보세요"
               : "Ask in Korean or English"}
           </p>
           <p className="mb-8 text-sky-400">
-            \uce74\uce74\uc624\ud1a1\uc73c\ub85c \ubb38\uc758\ud558\uc138\uc694
+            카카오톡으로도 편하게 연락 주세요
           </p>
           <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
             <a
@@ -519,14 +519,14 @@ export default function GuidePage() {
               className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-slate-500 px-6 py-3 font-medium text-slate-200 transition-colors hover:bg-slate-700 sm:w-auto"
             >
               <MessageCircle className="h-4 w-4" />
-              {isKo ? "\ubb38\uc790 \ubcf4\ub0b4\uae30" : "Text Me"}
+              {isKo ? "문자하기" : "Text Me"}
             </a>
             <Link
               href="/contact"
               className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-slate-500 px-6 py-3 font-medium text-slate-200 transition-colors hover:bg-slate-700 sm:w-auto"
             >
               <Globe className="h-4 w-4" />
-              {isKo ? "\uc5f0\ub77d \ud398\uc774\uc9c0" : "Contact Page"}
+              {isKo ? "연락 페이지" : "Contact Page"}
             </Link>
           </div>
         </div>

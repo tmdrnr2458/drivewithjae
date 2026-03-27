@@ -37,7 +37,16 @@ const timelineSteps = [
     titleEn: "Walk In & Meet",
     titleKo: "방문 & 인사",
     descEn: "I'll greet you, ask what you're looking for. No pressure.",
-    descKo: "인사드리고, 어떤 차를 찾으시는지 여쭤볼게요. 부담 없이.",
+    descKo: "반갑게 인사드리고, 어떤 차를 찾으시는지 물어볼게요. 편하게 오세요.",
+  },
+  {
+    icon: HelpCircle,
+    timeEn: "10-15 min",
+    timeKo: "10-15분",
+    titleEn: "Find Your Match",
+    titleKo: "맞는 차 찾기",
+    descEn: "I'll ask about your lifestyle, needs, and budget to narrow down the perfect car for you — before we even look at the lot.",
+    descKo: "생활 패턴, 가족 구성, 예산 등을 여쭤보고 딱 맞는 차를 추려드려요. 차를 보기 전에 먼저 어떤 게 맞는지 같이 찾아봐요.",
   },
   {
     icon: Car,
@@ -46,7 +55,7 @@ const timelineSteps = [
     titleEn: "Browse & Test Drive",
     titleKo: "둘러보기 & 시승",
     descEn: "Drive as many cars as you want. Bring your family.",
-    descKo: "원하시는 만큼 시승하세요. 가족도 함께 오세요.",
+    descKo: "마음에 드는 차 다 타보세요. 가족도 같이 오세요.",
   },
   {
     icon: Calculator,
@@ -55,7 +64,7 @@ const timelineSteps = [
     titleEn: "Talk Numbers",
     titleKo: "가격 상담",
     descEn: "I'll show you every number. Ask me anything.",
-    descKo: "모든 숫자를 보여드릴게요. 뭐든 물어보세요.",
+    descKo: "숫자 하나하나 다 보여드릴게요. 궁금한 거 다 물어보세요.",
   },
   {
     icon: FileText,
@@ -64,7 +73,7 @@ const timelineSteps = [
     titleEn: "F&I Paperwork",
     titleKo: "서류 작성",
     descEn: "I'll explain every document before you sign.",
-    descKo: "서명 전에 모든 서류를 설명해 드릴게요.",
+    descKo: "사인하기 전에 서류 하나하나 다 설명해 드릴게요.",
   },
   {
     icon: KeyRound,
@@ -73,7 +82,7 @@ const timelineSteps = [
     titleEn: "Drive Home",
     titleKo: "집으로 출발",
     descEn: "Keys in hand, smile on face.",
-    descKo: "열쇠를 받고, 미소와 함께 출발.",
+    descKo: "키 받고, 웃으면서 집으로!",
   },
 ];
 
@@ -88,20 +97,20 @@ const fees = [
     descEn:
       "This is a state-allowed dealer fee. Every dealer charges it.",
     descKo:
-      "주 정부에서 허용한 딜러 수수료입니다. 모든 딜러가 부과합니다.",
+      "주 정부에서 허용한 수수료예요. 어느 딜러를 가든 다 내는 거예요.",
   },
   {
     titleEn: "NC Sales Tax",
     titleKo: "노스캐롤라이나 판매세",
     descEn:
       "Wake County is 3%. This goes to the state, not us.",
-    descKo: "Wake County는 3%입니다. 세금은 주 정부로 가며, 저희에게 오지 않습니다.",
+    descKo: "Wake County는 3%예요. 이건 주 정부로 가는 거지 저희 주머니로 안 가요.",
   },
   {
     titleEn: "Tag & Title",
     titleKo: "등록 & 명의이전",
     descEn: "Registration with NC DMV.",
-    descKo: "NC DMV 차량 등록 비용입니다.",
+    descKo: "NC DMV에 차량 등록하는 비용이에요.",
   },
 ];
 
@@ -125,7 +134,7 @@ const cannotNegotiate = [
 const reviewGroups = [
   {
     fearEn: "I was afraid of being pressured",
-    fearKo: "압박받을까 봐 걱정했어요",
+    fearKo: "사라고 압박할까 봐 걱정했어요",
     color: "border-l-blue-500",
     bgColor: "bg-blue-50 dark:bg-blue-950/30",
     reviews: [
@@ -133,14 +142,14 @@ const reviewGroups = [
         textEn:
           "Seungkook was the opposite of pushy. He let us take our time and never made us feel rushed.",
         textKo:
-          "승국 씨는 전혀 강압적이지 않았어요. 천천히 고르게 해주셨고 절대 서두르지 않았습니다.",
+          "승국 씨는 전혀 안 밀어요. 천천히 고르게 해주시고 절대 서두르지 않았어요.",
         author: "Sarah M.",
       },
       {
         textEn:
           "No pressure at all. He actually told us to go home and think about it.",
         textKo:
-          "전혀 부담이 없었어요. 오히려 집에 가서 생각해보라고 하시더라고요.",
+          "부담 하나도 없었어요. 오히려 집에 가서 생각해보라고 하시더라고요.",
         author: "David K.",
       },
     ],
@@ -155,13 +164,13 @@ const reviewGroups = [
         textEn:
           "Everything was explained clearly. No surprises at signing.",
         textKo:
-          "모든 것이 명확하게 설명됐어요. 서명할 때 놀랄 일이 없었습니다.",
+          "다 명확하게 설명해주셨어요. 사인할 때 놀랄 일이 하나도 없었어요.",
         author: "Jennifer L.",
       },
       {
         textEn:
           "He walked me through every single line on the contract.",
-        textKo: "계약서의 모든 줄을 하나하나 설명해주셨어요.",
+        textKo: "계약서 한 줄 한 줄 다 짚어서 설명해주셨어요.",
         author: "Michael R.",
       },
     ],
@@ -190,7 +199,7 @@ const reviewGroups = [
   },
   {
     fearEn: "It was my first car ever",
-    fearKo: "생애 첫 차 구매라 무서웠어요",
+    fearKo: "첫 차 사는 거라 너무 무서웠어요",
     color: "border-l-orange-500",
     bgColor: "bg-orange-50 dark:bg-orange-950/30",
     reviews: [
@@ -198,7 +207,7 @@ const reviewGroups = [
         textEn:
           "As a first-time buyer I was terrified. Seungkook made it feel easy.",
         textKo:
-          "첫 차 구매라 너무 무서웠는데, 승국 씨 덕분에 쉽게 느껴졌어요.",
+          "첫 차라서 진짜 떨렸는데, 승국 씨 덕분에 편하게 샀어요.",
         author: "Emily T.",
       },
     ],
@@ -212,23 +221,23 @@ const reviewGroups = [
 const promises = [
   {
     en: "I will never pressure you to buy today.",
-    ko: "오늘 사라고 절대 압박하지 않겠습니다.",
+    ko: "오늘 당장 사라고 절대 압박하지 않겠습니다.",
   },
   {
     en: "I will explain every number on every piece of paper.",
-    ko: "모든 서류의 모든 숫자를 설명해 드리겠습니다.",
+    ko: "서류에 있는 숫자 하나하나 다 설명해 드리겠습니다.",
   },
   {
     en: "I will answer your texts and calls — even after the sale.",
-    ko: "판매 후에도 문자와 전화에 답하겠습니다.",
+    ko: "차 산 다음에도 문자, 전화 다 받겠습니다.",
   },
   {
     en: "If I can't get you a good deal, I'll tell you honestly.",
-    ko: "좋은 딜을 못 드리면, 솔직하게 말씀드리겠습니다.",
+    ko: "좋은 딜이 안 되면, 안 된다고 솔직히 말씀드리겠습니다.",
   },
   {
     en: "I will treat you like family, not a transaction.",
-    ko: "거래가 아닌, 가족처럼 대하겠습니다.",
+    ko: "손님이 아니라 가족처럼 대하겠습니다.",
   },
 ];
 
@@ -239,39 +248,39 @@ const promises = [
 const faqs = [
   {
     qEn: "Can I see the invoice price?",
-    qKo: "인보이스 가격을 볼 수 있나요?",
+    qKo: "인보이스 가격 볼 수 있어요?",
     aEn: "Yes. I'll show you.",
     aKo: "네, 보여드릴게요.",
   },
   {
     qEn: "What's your best out-the-door price?",
-    qKo: "최종 출고 가격이 얼마인가요?",
+    qKo: "다 포함해서 최종 가격이 얼마예요?",
     aEn: "Ask me this. I respect it.",
-    aKo: "이 질문을 꼭 하세요. 저는 이런 질문을 존중합니다.",
+    aKo: "이 질문 꼭 하세요. 이렇게 물어봐야 해요.",
   },
   {
     qEn: "Can I take the car to my mechanic?",
-    qKo: "제 정비사에게 차를 가져가도 되나요?",
+    qKo: "내 정비사한테 차 보여줘도 돼요?",
     aEn: "Absolutely. For used cars, I encourage it.",
-    aKo: "물론이죠. 중고차의 경우 오히려 권장합니다.",
+    aKo: "당연하죠. 중고차면 오히려 가져가 보시라고 해요.",
   },
   {
     qEn: "What if I change my mind?",
-    qKo: "마음이 바뀌면 어떡하죠?",
+    qKo: "마음이 바뀌면 어떡해요?",
     aEn: "Within reason, we'll work it out.",
-    aKo: "합리적인 범위 안에서 해결해 드리겠습니다.",
+    aKo: "합리적인 범위에서 같이 해결해 봐요.",
   },
   {
     qEn: "Do you get commission on add-ons?",
-    qKo: "추가 옵션에 커미션을 받나요?",
+    qKo: "추가 옵션에 커미션 받으세요?",
     aEn: "Yes, I'm honest about that. I'll tell you which ones are actually worth it.",
-    aKo: "네, 솔직히 말씀드립니다. 실제로 가치 있는 것만 추천해 드릴게요.",
+    aKo: "네, 솔직히 받아요. 대신 진짜 필요한 것만 추천해 드릴게요.",
   },
   {
     qEn: "What if my credit isn't great?",
-    qKo: "신용이 좋지 않으면 어떡하나요?",
+    qKo: "크레딧이 안 좋으면 어떡해요?",
     aEn: "We work with many lenders. I'll find the best option for your situation — honestly.",
-    aKo: "여러 금융기관과 협력합니다. 고객님 상황에 맞는 최선의 옵션을 찾아드리겠습니다.",
+    aKo: "여러 금융기관이랑 같이 일하고 있어요. 상황에 맞는 최선의 방법을 찾아드릴게요, 솔직하게.",
   },
 ];
 
@@ -338,7 +347,7 @@ export default function FinancingPage() {
         </p>
         <p className="mx-auto max-w-xl text-muted-foreground leading-relaxed">
           {isKo
-            ? "저는 제승국입니다. 이 페이지는 딜러십에 오시기 전에 모든 것을 알려드리기 위해 만들었습니다. 놀랄 일이 없도록."
+            ? "제승국이에요. 이 페이지는 딜러십 오시기 전에 다 알려드리려고 만들었어요. 놀랄 일 없게."
             : "I'm Seungkook Jae. I made this page so you know exactly what to expect before you ever step foot in the dealership. No surprises."}
         </p>
       </section>
@@ -351,12 +360,12 @@ export default function FinancingPage() {
       <section className="mb-16">
         <h2 className="mb-2 text-center text-2xl font-bold sm:text-3xl">
           {isKo
-            ? "방문하시면 실제로 이런 일이 일어납니다"
+            ? "오시면 이런 순서로 진행돼요"
             : "What Will Actually Happen When You Visit"}
         </h2>
         <p className="mb-10 text-center text-muted-foreground">
           {isKo
-            ? "단계별로 정리했습니다. 예상 소요 시간 포함."
+            ? "단계별로 정리했어요. 대략 시간도 적어놨으니 참고하세요."
             : "Step by step, with estimated times. No mysteries."}
         </p>
 
@@ -390,7 +399,7 @@ export default function FinancingPage() {
         <Card className="border-sky-200 bg-sky-50 dark:border-sky-900 dark:bg-sky-950/30">
           <CardContent className="pt-4 text-center text-sm font-medium">
             {isKo
-              ? "어떤 단계에서든 떠나실 수 있습니다. 죄책감 없이. 원하지 않으면 후속 전화도 없습니다."
+              ? "어떤 단계에서든 그냥 나가셔도 돼요. 미안해할 필요 없어요. 원치 않으면 전화도 안 해요."
               : "You can leave at ANY step. No guilt. No follow-up calls unless you want them."}
           </CardContent>
         </Card>
@@ -404,12 +413,12 @@ export default function FinancingPage() {
       <section className="mb-16">
         <h2 className="mb-2 text-center text-2xl font-bold sm:text-3xl">
           {isKo
-            ? "비용 설명 — 묻기 전에 알려드립니다"
+            ? "비용 — 물어보기 전에 미리 알려드릴게요"
             : "Fees Explained — Before You Ask"}
         </h2>
         <p className="mb-10 text-center text-muted-foreground">
           {isKo
-            ? "숨겨진 비용 없습니다. 보이는 그대로 내시는 겁니다."
+            ? "숨겨진 비용 없어요. 보이는 그대로예요."
             : "No hidden fees. What you see is what you pay."}
         </p>
 

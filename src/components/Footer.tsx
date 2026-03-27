@@ -12,7 +12,7 @@ export function Footer() {
         <div className="grid gap-6 sm:grid-cols-3">
           <div>
             <h3 className="mb-2 font-semibold">
-              Drive with <span className="text-sky-500">Jae</span>
+              Jae <span className="text-sky-500">Method</span>
             </h3>
             <p className="text-sm text-muted-foreground">{t("location")}</p>
             <p className="text-sm text-muted-foreground">{t("hours")}</p>

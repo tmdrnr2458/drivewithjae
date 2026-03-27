@@ -59,7 +59,7 @@ Notes: ${notes || "None"}
         body: JSON.stringify({
           access_key: process.env.WEB3FORMS_KEY,
           subject,
-          from_name: "Drive with Jae",
+          from_name: "Jae Method",
           to: "sjae@anderson-auto.net",
           message: emailBody,
           replyto: email || phone,
@@ -77,7 +77,7 @@ Notes: ${notes || "None"}
           Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
         },
         body: JSON.stringify({
-          from: "Drive with Jae <noreply@drivewithjae.com>",
+          from: "Jae Method <noreply@drivewithjae.com>",
           to: "sjae@anderson-auto.net",
           subject,
           text: emailBody,

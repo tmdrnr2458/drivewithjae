@@ -337,7 +337,7 @@ export default function FinancingPage() {
       {/* =========================================================== */}
       <section className="mb-16 text-center">
         <Badge variant="secondary" className="mb-4 text-sm">
-          {isKo ? "드라이브 위드 재" : "Drive with Jae"}
+          {isKo ? "재 메소드" : "Jae Method"}
         </Badge>
         <h1 className="mb-4 text-4xl font-bold tracking-tight sm:text-5xl">
           {t("financing.title")}

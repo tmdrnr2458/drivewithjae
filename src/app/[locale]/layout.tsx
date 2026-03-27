@@ -41,7 +41,7 @@ export async function generateMetadata({
   const messages = await getMessages({ locale });
   const meta = (messages as any).meta;
   return {
-    title: meta?.title || "Drive with Jae",
+    title: meta?.title || "Jae Method",
     description: meta?.description || "Find your perfect car",
     alternates: {
       languages: {

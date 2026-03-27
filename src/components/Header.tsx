@@ -35,7 +35,7 @@ export function Header() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
         <Link href="/" className="flex items-center gap-2">
           <span className="text-xl font-bold tracking-tight">
-            Drive with <span className="text-sky-500">Jae</span>
+            Jae <span className="text-sky-500">Method</span>
           </span>
         </Link>
 

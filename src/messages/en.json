@@ -57,7 +57,7 @@
   "quiz": {
     "title": "Find Your Perfect Car",
     "subtitle": "Answer a few questions about your life, and I'll match you with the right vehicle.",
-    "start": "Let's Go",
+    "start": "Start the 2-Minute Quiz",
     "next": "Next",
     "back": "Back",
     "seeResults": "See My Matches",
@@ -152,7 +152,13 @@
     "copyright": "© 2026 Drive with Jae. All rights reserved.",
     "privacy": "Privacy Policy",
     "hours": "Hours: Mon-Sat 9AM-8PM, Sun Closed",
-    "location": "Fred Anderson Kia of Raleigh"
+    "location": "Fred Anderson Kia of Raleigh",
+    "quickLinks": "Quick Links",
+    "inventory": "Inventory",
+    "findYourCar": "Find Your Car",
+    "buyingGuide": "Buying Guide",
+    "contact": "Contact",
+    "contactTitle": "Contact"
   },
   "common": {
     "learnMore": "Learn More",

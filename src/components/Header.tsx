@@ -46,7 +46,7 @@ export function Header() {
               key={item.href}
               href={item.href}
               className={`rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground ${
-                pathname.startsWith(item.href) ? "bg-accent text-accent-foreground" : "text-muted-foreground"
+                pathname.startsWith(item.href) ? "bg-sky-50 text-sky-700 dark:bg-sky-950 dark:text-sky-300" : "text-muted-foreground"
               }`}
             >
               {item.label}

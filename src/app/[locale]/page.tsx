@@ -25,7 +25,7 @@ export default function HomePage() {
               <p className="mb-2 text-sm font-medium uppercase tracking-widest text-sky-400">
                 Fred Anderson Kia of Raleigh
               </p>
-              <h1 className="mb-4 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+              <h1 className="mb-4 text-4xl font-bold tracking-tight break-keep sm:text-5xl lg:text-6xl">
                 {t("hero.greeting")}
               </h1>
               <p className="mb-2 text-xl text-slate-300 sm:text-2xl">
@@ -43,7 +43,7 @@ export default function HomePage() {
                 </Link>
                 <Link
                   href="/inventory"
-                  className="inline-flex items-center justify-center rounded-lg border border-slate-500 px-8 py-3 text-base font-medium text-slate-200 transition-colors hover:bg-slate-700"
+                  className="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white/10 px-8 py-3 text-base font-medium text-white transition-colors hover:bg-white/20"
                 >
                   {t("hero.ctaInventory")}
                 </Link>

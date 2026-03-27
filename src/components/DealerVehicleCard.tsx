@@ -50,9 +50,9 @@ export function DealerVehicleCard({ vehicle, features, matchedFeatures }: { vehi
   const hasIncentives = vehicle.incentives.length > 0;
 
   return (
-    <Card className="overflow-hidden transition-shadow hover:shadow-lg">
+    <Card className="overflow-hidden transition-all duration-200 hover:shadow-lg hover:-translate-y-1 flex flex-col h-full">
       {/* Image — links to detail page */}
-      <Link href={`/inventory/${vehicle.vin}`} className="block relative aspect-[16/10] bg-muted">
+      <Link href={`/inventory/${vehicle.vin}`} className="block relative aspect-video bg-muted">
         {mainImage ? (
           <img
             src={mainImage.url}
@@ -87,7 +87,7 @@ export function DealerVehicleCard({ vehicle, features, matchedFeatures }: { vehi
         )}
       </Link>
 
-      <CardContent className="p-4">
+      <CardContent className="p-4 flex-1 flex flex-col">
         {/* Title */}
         <Link href={`/inventory/${vehicle.vin}`} className="hover:text-sky-600 transition-colors">
           <h3 className="mb-1 font-semibold leading-tight">
@@ -109,7 +109,7 @@ export function DealerVehicleCard({ vehicle, features, matchedFeatures }: { vehi
               {vehicle.salePrice || vehicle.retailPrice || vehicle.msrp || "Call for Price"}
             </span>
             {priceNum > 0 && (
-              <span className="text-xs text-muted-foreground whitespace-nowrap">
+              <span className="text-sm font-medium text-slate-600 dark:text-slate-400 whitespace-nowrap">
                 ~${monthlyPayment.toLocaleString()}/mo
               </span>
             )}
@@ -207,7 +207,7 @@ export function DealerVehicleCard({ vehicle, features, matchedFeatures }: { vehi
         {/* CTA */}
         <Link
           href={`/contact?vehicle=${encodeURIComponent(`${vehicle.year} ${vehicle.make} ${vehicle.model} ${vehicle.trim}`)}&vin=${vehicle.vin}`}
-          className="inline-flex w-full items-center justify-center rounded-lg bg-sky-500 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-sky-600"
+          className="mt-auto inline-flex w-full items-center justify-center rounded-lg bg-sky-500 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-sky-600"
         >
           Contact About This Car
         </Link>

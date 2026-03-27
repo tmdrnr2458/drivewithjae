@@ -18,16 +18,16 @@ export function Footer() {
             <p className="text-sm text-muted-foreground">{t("hours")}</p>
           </div>
           <div>
-            <h3 className="mb-2 font-semibold">Quick Links</h3>
+            <h3 className="mb-2 font-semibold">{t("quickLinks")}</h3>
             <nav className="flex flex-col gap-1">
-              <Link href="/inventory" className="text-sm text-muted-foreground hover:text-foreground">Inventory</Link>
-              <Link href="/quiz" className="text-sm text-muted-foreground hover:text-foreground">Find Your Car</Link>
-              <Link href="/guide" className="text-sm text-muted-foreground hover:text-foreground">Buying Guide</Link>
-              <Link href="/contact" className="text-sm text-muted-foreground hover:text-foreground">Contact</Link>
+              <Link href="/inventory" className="text-sm text-muted-foreground hover:text-foreground">{t("inventory")}</Link>
+              <Link href="/quiz" className="text-sm text-muted-foreground hover:text-foreground">{t("findYourCar")}</Link>
+              <Link href="/guide" className="text-sm text-muted-foreground hover:text-foreground">{t("buyingGuide")}</Link>
+              <Link href="/contact" className="text-sm text-muted-foreground hover:text-foreground">{t("contact")}</Link>
             </nav>
           </div>
           <div>
-            <h3 className="mb-2 font-semibold">Contact</h3>
+            <h3 className="mb-2 font-semibold">{t("contactTitle")}</h3>
             <p className="text-sm text-muted-foreground">
               <a href="tel:+19842421715" className="hover:text-foreground">984-242-1715</a>
             </p>

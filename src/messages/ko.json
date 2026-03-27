@@ -57,7 +57,7 @@
   "quiz": {
     "title": "내 차 찾기",
     "subtitle": "생활 패턴 몇 가지만 알려주시면, 딱 맞는 차를 찾아드릴게요.",
-    "start": "시작하기",
+    "start": "2분 퀴즈 시작하기",
     "next": "다음",
     "back": "이전",
     "seeResults": "결과 보기",
@@ -152,7 +152,13 @@
     "copyright": "\u00a9 2026 Drive with Jae. All rights reserved.",
     "privacy": "개인정보처리방침",
     "hours": "영업시간: 월-토 오전 9시-오후 8시, 일요일 휴무",
-    "location": "Fred Anderson Kia of Raleigh"
+    "location": "Fred Anderson Kia of Raleigh",
+    "quickLinks": "바로가기",
+    "inventory": "재고 차량",
+    "findYourCar": "내 차 찾기",
+    "buyingGuide": "차 구매 가이드",
+    "contact": "연락하기",
+    "contactTitle": "연락처"
   },
   "common": {
     "learnMore": "자세히 보기",

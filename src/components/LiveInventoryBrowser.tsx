@@ -28,7 +28,8 @@ import {
   SheetFooter,
   SheetClose,
 } from "@/components/ui/sheet";
-import { ArrowUpDown, Loader2, RefreshCw, SlidersHorizontal, X } from "lucide-react";
+import { ArrowUpDown, Car, Loader2, RefreshCw, SlidersHorizontal, X } from "lucide-react";
+import { Link } from "@/i18n/navigation";
 
 // ─── Feature cache ─────────────────────────────────────
 
@@ -663,12 +664,22 @@ export function LiveInventoryBrowser({ defaultType = "all" }: LiveInventoryBrows
             </div>
           ) : (
             <div className="py-16 text-center">
-              <p className="text-lg text-muted-foreground mb-4">{t("noResults")}</p>
-              {activeFilterCount > 0 && (
-                <Button variant="outline" onClick={handleClearAll}>
-                  Clear All Filters
-                </Button>
-              )}
+              <Car className="mx-auto mb-4 h-12 w-12 text-muted-foreground/30" />
+              <p className="text-lg text-muted-foreground mb-2">{t("noResults")}</p>
+              <p className="text-sm text-muted-foreground mb-6">Try removing some filters or contact Jae for help finding your car.</p>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                {activeFilterCount > 0 && (
+                  <Button variant="outline" onClick={handleClearAll}>
+                    Clear All Filters
+                  </Button>
+                )}
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center rounded-lg bg-sky-500 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-sky-600"
+                >
+                  Contact Jae
+                </Link>
+              </div>
             </div>
           )}
         </div>

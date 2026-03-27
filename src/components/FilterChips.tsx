@@ -24,7 +24,7 @@ export function FilterChips({ chips, onRemove, onClearAll }: FilterChipsProps) {
         <Badge
           key={`${chip.category}-${chip.key}`}
           variant="secondary"
-          className="cursor-pointer gap-1 pl-2.5 pr-1.5 py-1 h-auto"
+          className="cursor-pointer gap-1 pl-2.5 pr-1.5 py-1 h-auto bg-sky-100 text-sky-800 border-sky-200 hover:bg-sky-200 dark:bg-sky-900 dark:text-sky-200 dark:border-sky-800"
         >
           <span className="text-xs">{chip.label}</span>
           <button

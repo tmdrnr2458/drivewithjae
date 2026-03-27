@@ -433,14 +433,10 @@ export function LiveInventoryBrowser() {
       {/* Mobile: Filter button */}
       <div className="mb-4 lg:hidden">
         <Sheet open={mobileFiltersOpen} onOpenChange={setMobileFiltersOpen}>
-          <SheetTrigger
-            render={
-              <Button variant="outline" className="w-full justify-center gap-2">
-                <SlidersHorizontal className="h-4 w-4" />
-                <span>Filters{activeFilterCount > 0 ? ` (${activeFilterCount} active)` : ""}</span>
-              </Button>
-            }
-          />
+          <SheetTrigger className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-input bg-background px-4 py-2 text-sm font-medium hover:bg-accent">
+            <SlidersHorizontal className="h-4 w-4" />
+            <span>Filters{activeFilterCount > 0 ? ` (${activeFilterCount} active)` : ""}</span>
+          </SheetTrigger>
           <SheetContent side="bottom" className="max-h-[85vh] overflow-hidden flex flex-col">
             <SheetHeader>
               <SheetTitle>
@@ -466,13 +462,9 @@ export function LiveInventoryBrowser() {
                     Clear All
                   </Button>
                 )}
-                <SheetClose
-                  render={
-                    <Button className="flex-1 bg-sky-500 hover:bg-sky-600 text-white">
-                      Show {filtered.length} vehicles
-                    </Button>
-                  }
-                />
+                <SheetClose className="flex-1 inline-flex items-center justify-center rounded-lg bg-sky-500 px-4 py-2 text-sm font-medium text-white hover:bg-sky-600">
+                  Show {filtered.length} vehicles
+                </SheetClose>
               </div>
             </SheetFooter>
           </SheetContent>

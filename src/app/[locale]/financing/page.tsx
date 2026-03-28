@@ -35,9 +35,9 @@ const timelineSteps = [
     timeEn: "5 min",
     timeKo: "5분",
     titleEn: "Walk In & Meet",
-    titleKo: "방문 & 인사",
+    titleKo: "방문 후 상담 시작",
     descEn: "I'll greet you, ask what you're looking for. No pressure.",
-    descKo: "반갑게 인사드리고, 어떤 차를 찾으시는지 물어볼게요. 편하게 오세요.",
+    descKo: "평소 운전 스타일, 가족 구성, 예산 같은 부분 여쭤보고 같이 맞는 차를 봅니다",
   },
   {
     icon: HelpCircle,
@@ -62,7 +62,7 @@ const timelineSteps = [
     timeEn: "15-20 min",
     timeKo: "15-20분",
     titleEn: "Talk Numbers",
-    titleKo: "가격 상담",
+    titleKo: "금액은 하나씩 다 설명드릴게요",
     descEn: "I'll show you every number. Ask me anything.",
     descKo: "숫자 하나하나 다 보여드릴게요. 궁금한 거 다 물어보세요.",
   },
@@ -80,9 +80,9 @@ const timelineSteps = [
     timeEn: "5 min",
     timeKo: "5분",
     titleEn: "Drive Home",
-    titleKo: "집으로 출발",
+    titleKo: "차 받고 귀가",
     descEn: "Keys in hand, smile on face.",
-    descKo: "키 받고, 웃으면서 집으로!",
+    descKo: "차 키 받으시고 출발하시면 됩니다",
   },
 ];
 
@@ -97,7 +97,7 @@ const fees = [
     descEn:
       "This is a state-allowed dealer fee. Every dealer charges it.",
     descKo:
-      "주 정부에서 허용한 수수료예요. 어느 딜러를 가든 다 내는 거예요.",
+      "서류 수수료는 약 $799이고, 딜러십에서 공통으로 들어가는 비용입니다.",
   },
   {
     titleEn: "NC Sales Tax",
@@ -134,7 +134,7 @@ const cannotNegotiate = [
 const reviewGroups = [
   {
     fearEn: "I was afraid of being pressured",
-    fearKo: "사라고 압박할까 봐 걱정했어요",
+    fearKo: "전혀 부담 주지 않으셨어요",
     color: "border-l-blue-500",
     bgColor: "bg-blue-50 dark:bg-blue-950/30",
     reviews: [
@@ -199,7 +199,7 @@ const reviewGroups = [
   },
   {
     fearEn: "It was my first car ever",
-    fearKo: "첫 차 사는 거라 너무 무서웠어요",
+    fearKo: "첫 차라 많이 떨렸어요",
     color: "border-l-orange-500",
     bgColor: "bg-orange-50 dark:bg-orange-950/30",
     reviews: [
@@ -207,7 +207,7 @@ const reviewGroups = [
         textEn:
           "As a first-time buyer I was terrified. Seungkook made it feel easy.",
         textKo:
-          "첫 차라서 진짜 떨렸는데, 승국 씨 덕분에 편하게 샀어요.",
+          "첫 차라서 진짜 떨렸는데, 승국님 덕분에 편하게 샀어요.",
         author: "Emily T.",
       },
     ],
@@ -229,7 +229,7 @@ const promises = [
   },
   {
     en: "I will answer your texts and calls — even after the sale.",
-    ko: "차 산 다음에도 문자, 전화 다 받겠습니다.",
+    ko: "출고 후에도 문자나 전화 주시면 계속 도와드리겠습니다",
   },
   {
     en: "If I can't get you a good deal, I'll tell you honestly.",
@@ -237,7 +237,7 @@ const promises = [
   },
   {
     en: "I will treat you like family, not a transaction.",
-    ko: "손님이 아니라 가족처럼 대하겠습니다.",
+    ko: "편하게 믿고 맡기실 수 있게 도와드리겠습니다",
   },
 ];
 
@@ -337,7 +337,7 @@ export default function FinancingPage() {
       {/* =========================================================== */}
       <section className="mb-16 text-center">
         <Badge variant="secondary" className="mb-4 text-sm">
-          {isKo ? "재 메소드" : "Jae Method"}
+          {isKo ? "차 구매 과정, 이렇게 진행됩니다" : "Jae Method"}
         </Badge>
         <h1 className="mb-4 text-4xl font-bold tracking-tight sm:text-5xl">
           {t("financing.title")}
@@ -347,7 +347,7 @@ export default function FinancingPage() {
         </p>
         <p className="mx-auto max-w-xl text-muted-foreground leading-relaxed">
           {isKo
-            ? "제승국이에요. 이 페이지는 딜러십 오시기 전에 다 알려드리려고 만들었어요. 놀랄 일 없게."
+            ? "제승국입니다. 딜러십 오시기 전에 어떤 식으로 진행되는지 미리 보실 수 있게 정리해뒀어요."
             : "I'm Seungkook Jae. I made this page so you know exactly what to expect before you ever step foot in the dealership. No surprises."}
         </p>
       </section>
@@ -399,7 +399,7 @@ export default function FinancingPage() {
         <Card className="border-sky-200 bg-sky-50 dark:border-sky-900 dark:bg-sky-950/30">
           <CardContent className="pt-4 text-center text-sm font-medium">
             {isKo
-              ? "어떤 단계에서든 그냥 나가셔도 돼요. 미안해할 필요 없어요. 원치 않으면 전화도 안 해요."
+              ? "어느 단계에서든 아니다 싶으면 편하게 가셔도 됩니다. 부담 느끼실 필요 없고, 원치 않으시면 따로 연락도 안 드립니다."
               : "You can leave at ANY step. No guilt. No follow-up calls unless you want them."}
           </CardContent>
         </Card>
@@ -413,12 +413,12 @@ export default function FinancingPage() {
       <section className="mb-16">
         <h2 className="mb-2 text-center text-2xl font-bold sm:text-3xl">
           {isKo
-            ? "비용 — 물어보기 전에 미리 알려드릴게요"
+            ? "비용은 미리 설명드릴게요"
             : "Fees Explained — Before You Ask"}
         </h2>
         <p className="mb-10 text-center text-muted-foreground">
           {isKo
-            ? "숨겨진 비용 없어요. 보이는 그대로예요."
+            ? "숨겨진 비용 없이 보이는 그대로 안내드립니다"
             : "No hidden fees. What you see is what you pay."}
         </p>
 
@@ -467,7 +467,7 @@ export default function FinancingPage() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-base text-red-700 dark:text-red-400">
                 <XCircle className="h-5 w-5" />
-                {isKo ? "못 깎는 것 (법으로 정해진 거)" : "What I CANNOT negotiate"}
+                {isKo ? "조정 불가 항목 (법/규정상 고정)" : "What I CANNOT negotiate"}
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -534,11 +534,11 @@ export default function FinancingPage() {
       {/* =========================================================== */}
       <section className="mb-16">
         <h2 className="mb-2 text-center text-2xl font-bold sm:text-3xl">
-          {isKo ? "나의 약속" : "My Promise to You"}
+          {isKo ? "제 약속" : "My Promise to You"}
         </h2>
         <p className="mb-10 text-center text-muted-foreground">
           {isKo
-            ? "제승국이 직접 드리는 약속이에요."
+            ? "제가 직접 약속드리는 부분입니다"
             : "Personal commitments from me, Seungkook, to you."}
         </p>
 
@@ -573,7 +573,7 @@ export default function FinancingPage() {
         </h2>
         <p className="mb-10 text-center text-muted-foreground">
           {isKo
-            ? "솔직하게 답해드릴게요. 눌러서 확인하세요."
+            ? "솔직하게 답해드릴게요. 눌러서 확인해보세요."
             : "Honest answers from me. Tap to expand."}
         </p>
 
@@ -596,7 +596,7 @@ export default function FinancingPage() {
       <section className="text-center">
         <Heart className="mx-auto mb-4 h-10 w-10 text-sky-500" />
         <h2 className="mb-4 text-2xl font-bold sm:text-3xl">
-          {isKo ? "준비 되셨으면 언제든 오세요" : "Ready When You Are"}
+          {isKo ? "준비되셨으면 언제든 오세요" : "Ready When You Are"}
         </h2>
         <p className="mx-auto mb-8 max-w-md text-muted-foreground">
           {isKo
@@ -610,7 +610,7 @@ export default function FinancingPage() {
             className="inline-flex items-center gap-2 rounded-lg bg-sky-500 px-8 py-3 font-semibold text-white transition-colors hover:bg-sky-600"
           >
             <MessageCircle className="h-5 w-5" />
-            {isKo ? "편하게 방문 예약하기" : "Schedule a No-Pressure Visit"}
+            {isKo ? "방문 예약하기" : "Schedule a No-Pressure Visit"}
           </Link>
           <a
             href="sms:+19842421715"

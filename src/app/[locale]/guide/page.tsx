@@ -305,7 +305,7 @@ export default function GuidePage() {
         <div className="mx-auto max-w-4xl px-4 py-20 text-center sm:py-28">
           <Badge className="mb-4 border-sky-500/30 bg-sky-500/10 text-sky-300">
             <BookOpen className="mr-1.5 h-3.5 w-3.5" />
-            {isKo ? "\uc644\ubcbd \uac00\uc774\ub4dc" : "Complete Guide"}
+            {isKo ? "처음 사는 분들 가이드" : "Complete Guide"}
           </Badge>
           <h1 className="mb-4 text-4xl font-bold tracking-tight sm:text-5xl">
             {t("guide.title")}
@@ -317,7 +317,7 @@ export default function GuidePage() {
           <div className="mx-auto max-w-2xl rounded-xl border border-sky-500/20 bg-sky-500/5 p-6">
             <p className="italic text-slate-300">
               {isKo
-                ? "\"서류 앞에서 뭔 말인지 모르는 그 느낌, 저도 알아요. 저도 겪었으니까요.\""
+                ? "\"계약서나 서류 보면 무슨 말인지 막막한 느낌, 저도 겪어봐서 압니다.\""
                 : "\"I know what it feels like to not understand the paperwork in front of you. I've been there.\""}
             </p>
             <p className="mt-2 text-sm font-medium text-sky-400">
@@ -337,7 +337,7 @@ export default function GuidePage() {
             </Badge>
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
               {isKo
-                ? "미국에서 차 사는 법, 단계별로 알려드릴게요"
+                ? "미국에서 차 사는 과정, 순서대로 알려드릴게요"
                 : "7 Steps to Buying a Car in the US"}
             </h2>
           </div>
@@ -378,7 +378,7 @@ export default function GuidePage() {
               {isKo ? "이거 조심하세요" : "Watch Out"}
             </Badge>
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-              {isKo ? "이것만 알면 안 당해요" : "Common Traps to Avoid"}
+              {isKo ? "이 정도는 알고 가시면 훨씬 덜 헷갈립니다" : "Common Traps to Avoid"}
             </h2>
           </div>
           <div className="grid gap-6 sm:grid-cols-2">
@@ -424,7 +424,7 @@ export default function GuidePage() {
               {isKo ? "준비물 체크" : "Checklist"}
             </Badge>
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-              {isKo ? "딜러 갈 때 이거 챙기세요" : "What to Bring to the Dealer"}
+              {isKo ? "딜러십 가실 때 이건 챙겨오세요" : "What to Bring to the Dealer"}
             </h2>
           </div>
           <div className="grid gap-6 lg:grid-cols-2">
@@ -478,7 +478,7 @@ export default function GuidePage() {
             </Badge>
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
               {isKo
-                ? "처음 사시는 분들이 제일 많이 물어보는 것들"
+                ? "처음 차 사시는 분들이 많이 물어보시는 것들"
                 : "FAQ for International Buyers"}
             </h2>
           </div>
@@ -533,7 +533,7 @@ export default function GuidePage() {
               className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-slate-500 px-6 py-3 font-medium text-slate-200 transition-colors hover:bg-slate-700 sm:w-auto"
             >
               <Globe className="h-4 w-4" />
-              {isKo ? "연락 페이지" : "Contact Page"}
+              {isKo ? "문의하러 가기" : "Contact Page"}
             </Link>
           </div>
         </div>
